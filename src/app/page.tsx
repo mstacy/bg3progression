@@ -1,14 +1,13 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
-// import Image from "next/image";
-import Accordion from "@mui/material/Accordion";
-// import AccordionActions from "@mui/material/AccordionActions";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
-// import styles from "./page.module.css";
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Checkbox,
+    FormControlLabel,
+} from "@mui/material";
 import progression from "../../progression.json";
 
 type region = {
@@ -48,9 +47,7 @@ export default function Home() {
 
     useLayoutEffect(() => {
         const saved = localStorage.getItem(checkedBoxesKey);
-        // typeof window !== "undefined"
-        //     ? localStorage.getItem(checkedBoxesKey)
-        //     : "{}";
+
         const initial = JSON.parse(saved || "{}");
         if (Object.keys(initial).length) setCheckedBoxes(initial);
     }, []);
