@@ -34,17 +34,23 @@ type item = {
     link: string;
 };
 
+type checkboxValues = {
+    isChecked: boolean;
+    region: string;
+    location: string;
+};
+
 export default function Home() {
     const checkedBoxesKey = "checkedBoxes";
-    const [checkedBoxes, setCheckedBoxes] = useState<Record<string, boolean>>(
-        {}
-    );
+    const [checkedBoxes, setCheckedBoxes] = useState<
+        Record<string, checkboxValues>
+    >({});
 
     useLayoutEffect(() => {
-        const saved =
-            typeof window !== "undefined"
-                ? localStorage.getItem(checkedBoxesKey)
-                : "{}";
+        const saved = localStorage.getItem(checkedBoxesKey);
+        // typeof window !== "undefined"
+        //     ? localStorage.getItem(checkedBoxesKey)
+        //     : "{}";
         const initial = JSON.parse(saved || "{}");
         if (Object.keys(initial).length) setCheckedBoxes(initial);
     }, []);
@@ -54,29 +60,34 @@ export default function Home() {
     }, [checkedBoxes]);
 
     const buildRegion = (region: region) => {
+        const percentComplete = getPercentage("region", region.name);
         return (
             <Accordion key={region.name} disableGutters>
                 <AccordionSummary>
                     <div className="flex justify-between w-full">
                         <h2>{region.name}</h2>
-                        <div>0%</div>
+                        {percentComplete}%
                     </div>
                 </AccordionSummary>
 
                 <AccordionDetails>
                     {region.locations.map((location) =>
-                        buildLocation(location)
+                        buildLocation(location, region.name)
                     )}
                 </AccordionDetails>
             </Accordion>
         );
     };
 
-    const buildLocation = (location: location) => {
+    const buildLocation = (location: location, regionName: string) => {
+        const percentComplete = getPercentage("location", location.name);
         return (
             <Accordion key={location.name} disableGutters>
                 <AccordionSummary>
-                    <h3>{location.name}</h3>
+                    <div className="flex justify-between w-full">
+                        <h3>{location.name}</h3>
+                        {percentComplete}%
+                    </div>
                 </AccordionSummary>
 
                 <AccordionDetails
@@ -89,14 +100,22 @@ export default function Home() {
                     {!!location.quests.length && (
                         <div className="flex flex-col">
                             <h4>Quests</h4>
-                            {buildQuests(location.quests)}
+                            {buildQuests(
+                                location.quests,
+                                regionName,
+                                location.name
+                            )}
                         </div>
                     )}
 
                     {!!location.items.length && (
                         <div className="flex flex-col">
                             <h4>Items</h4>
-                            {buildItems(location.items)}
+                            {buildItems(
+                                location.items,
+                                regionName,
+                                location.name
+                            )}
                         </div>
                     )}
                 </AccordionDetails>
@@ -104,12 +123,20 @@ export default function Home() {
         );
     };
 
-    const buildQuests = (quests: quest[]) => {
+    const buildQuests = (
+        quests: quest[],
+        regionName: string,
+        locationName: string
+    ) => {
         return (
             <>
                 {quests.map((quest: quest) => {
                     if (!checkedBoxes[quest.name]) {
-                        checkedBoxes[quest.name] = false;
+                        checkedBoxes[quest.name] = {
+                            isChecked: false,
+                            region: regionName,
+                            location: locationName,
+                        };
                     }
                     return (
                         <FormControlLabel
@@ -118,11 +145,15 @@ export default function Home() {
                             key={quest.name}
                             onChange={(e, checked) => {
                                 handleChange({
-                                    checked: checked,
                                     name: quest.name,
+                                    values: {
+                                        isChecked: checked,
+                                        region: regionName,
+                                        location: locationName,
+                                    },
                                 });
                             }}
-                            checked={checkedBoxes[quest.name]}
+                            checked={checkedBoxes[quest.name].isChecked}
                         />
                     );
                 })}
@@ -130,12 +161,20 @@ export default function Home() {
         );
     };
 
-    const buildItems = (items: item[]) => {
+    const buildItems = (
+        items: item[],
+        regionName: string,
+        locationName: string
+    ) => {
         return (
             <>
                 {items.map((item: item) => {
                     if (!checkedBoxes[item.name]) {
-                        checkedBoxes[item.name] = false;
+                        checkedBoxes[item.name] = {
+                            isChecked: false,
+                            region: regionName,
+                            location: locationName,
+                        };
                     }
                     return (
                         <FormControlLabel
@@ -144,11 +183,15 @@ export default function Home() {
                             key={item.name}
                             onChange={(e, checked) => {
                                 handleChange({
-                                    checked: checked,
                                     name: item.name,
+                                    values: {
+                                        isChecked: checked,
+                                        region: regionName,
+                                        location: locationName,
+                                    },
                                 });
                             }}
-                            checked={checkedBoxes[item.name]}
+                            checked={checkedBoxes[item.name].isChecked}
                         />
                     );
                 })}
@@ -156,16 +199,25 @@ export default function Home() {
         );
     };
 
-    const handleChange = ({
-        checked,
-        name,
-    }: {
-        checked: boolean;
-        name: string;
-    }) => {
-        // console.log(e);
+    const getPercentage = (slug: string, value: string) => {
+        const values = Object.values(checkedBoxes);
+        if (!values.length) return 0;
 
-        checkedBoxes[name] = checked;
+        const checks = values.filter(
+            (check: checkboxValues) => check[slug] === value
+        );
+        const checked = checks.filter((check) => check.isChecked);
+        return ((checked.length / checks.length) * 100).toFixed(0);
+    };
+
+    const handleChange = ({
+        name,
+        values,
+    }: {
+        name: string;
+        values: checkboxValues;
+    }) => {
+        checkedBoxes[name] = values;
         setCheckedBoxes({
             ...checkedBoxes,
         });
