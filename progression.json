@@ -1,0 +1,263 @@
+{
+  "prologue": [
+    {
+      "location": {
+        "name": "Nautiloid",
+        "link": "https://bg3.wiki/wiki/Nautiloid"
+      },
+      "quests": [
+        {
+          "name": "Escape the Nautiloid",
+          "link": "https://bg3.wiki/wiki/Escape_the_Nautiloid"
+        },
+        {
+          "name": "Rescue the Illithids' Captive",
+          "link": "https://bg3.wiki/wiki/Rescue_the_Illithids%27_Captive"
+        }
+      ],
+      "items": [
+        {
+          "name": "Everburn Blade",
+          "link": "https://bg3.wiki/wiki/Everburn_Blade",
+          "rarity": "uncommon"
+        }
+      ]
+    }
+  ],
+  "act1": [
+    {
+      "region": {
+        "name": "Wilderness",
+        "link": "https://bg3.wiki/wiki/Wilderness",
+        "locations": [
+          {
+            "location": {
+              "name": "Ravaged Beach",
+              "link": "https://bg3.wiki/wiki/Ravaged_Beach"
+            },
+            "quests": [
+              {
+                "name": "Find a Cure",
+                "link": "https://bg3.wiki/wiki/Find_a_Cure"
+              },
+              {
+                "name": "Daughter of Darkness",
+                "link": "https://bg3.wiki/wiki/Daughter_of_Darkness"
+              },
+              {
+                "name": "The Pale Elf",
+                "link": "https://bg3.wiki/wiki/The_Pale_Elf"
+              },
+              {
+                "name": "The Wizard of Waterdeep",
+                "link": "https://bg3.wiki/wiki/The_Wizard_of_Waterdeep"
+              },
+              {
+                "name": "Get Help from Healer Nettie",
+                "link": "https://bg3.wiki/wiki/Get_Help_from_Healer_Nettie"
+              },
+              {
+                "name": "The Githyanki Warrior",
+                "link": "https://bg3.wiki/wiki/The_Githyanki_Warrior"
+              },
+              {
+                "name": "Find the Githyanki Crèche",
+                "link": "https://bg3.wiki/wiki/Find_the_Githyanki_Crèche"
+              },
+              {
+                "name": "Explore the Ruins",
+                "link": "https://bg3.wiki/wiki/Explore_the_Ruins"
+              }
+            ],
+            "items": [
+              {
+                "name": "Gloves of Power",
+                "link": "https://bg3.wiki/wiki/Gloves_of_Power",
+                "rarity": "uncommon"
+              }
+            ]
+          },
+          {
+            "location": {
+              "name": "Emerald Grove",
+              "link": "https://bg3.wiki/wiki/Emerald_Grove"
+            },
+            "quests": [
+              {
+                "name": "Save the Refugees",
+                "link": "https://bg3.wiki/wiki/Save_the_Refugees"
+              },
+              {
+                "name": "The Blade of Frontiers",
+                "link": "https://bg3.wiki/wiki/The_Blade_of_Frontiers"
+              },
+              {
+                "name": "Find Doni",
+                "link": "https://bg3.wiki/wiki/Find_Doni"
+              },
+              {
+                "name": "Find Your Belongings",
+                "link": "https://bg3.wiki/wiki/Find_Your_Belongings"
+              },
+              {
+                "name": "Investigate the Beach",
+                "link": "https://bg3.wiki/wiki/Investigate_the_Beach"
+              },
+              {
+                "name": "Return the Locket",
+                "link": "https://bg3.wiki/wiki/Return_the_Locket"
+              },
+              {
+                "name": "Save Arabella",
+                "link": "https://bg3.wiki/wiki/Save_Arabella"
+              },
+              {
+                "name": "Steal the Sacred Idol",
+                "link": "https://bg3.wiki/wiki/Steal_the_Sacred_Idol"
+              },
+              {
+                "name": "Save the Goblin Sazza",
+                "link": "https://bg3.wiki/wiki/Save_the_Goblin_Sazza"
+              },
+              {
+                "name": "The Hellion's Heart",
+                "link": "https://bg3.wiki/wiki/The_Hellion%27s_Heart"
+              }
+            ],
+            "items": [
+              {
+                "name": "Broodmother's Revenge",
+                "link": "https://bg3.wiki/wiki/Broodmother%27s_Revenge",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Key of the Ancients",
+                "link": "https://bg3.wiki/wiki/Key_of_the_Ancients",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Robe of Summer",
+                "link": "https://bg3.wiki/wiki/Robe_of_Summer",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Shapeshifter's Boon Ring",
+                "link": "https://bg3.wiki/wiki/Shapeshifter%27s_Boon_Ring",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Sorrow",
+                "link": "https://bg3.wiki/wiki/Sorrow",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Dragon's Grasp",
+                "link": "https://bg3.wiki/wiki/Dragon%27s_Grasp",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Gloves of Missile Snaring",
+                "link": "https://bg3.wiki/wiki/Gloves_of_Missile_Snaring",
+                "rarity": "rare"
+              },
+              {
+                "name": "Hedge Wanderer Armour",
+                "link": "https://bg3.wiki/wiki/Hedge_Wanderer_Armour",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Rain Dancer",
+                "link": "https://bg3.wiki/wiki/Rain_Dancer",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Ring of Flinging",
+                "link": "https://bg3.wiki/wiki/Ring_of_Flinging",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Spellthief",
+                "link": "https://bg3.wiki/wiki/Spellthief",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Corellon's Grace",
+                "link": "https://bg3.wiki/wiki/Corellon%27s_Grace",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Hunting Shortbow",
+                "link": "https://bg3.wiki/wiki/Hunting_Shortbow",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Safeguard Shield",
+                "link": "https://bg3.wiki/wiki/Safeguard_Shield",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "The Whispering Promise",
+                "link": "https://bg3.wiki/wiki/The_Whispering_Promise",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Hellrider's Pride",
+                "link": "https://bg3.wiki/wiki/Hellrider%27s_Pride",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Komira's Locket",
+                "link": "https://bg3.wiki/wiki/Komira%27s_Locket",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Pale Oak",
+                "link": "https://bg3.wiki/wiki/Pale_Oak",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Ring of Protection",
+                "link": "https://bg3.wiki/wiki/Ring_of_Protection",
+                "rarity": "rare"
+              },
+              {
+                "name": "Wapira's Crown",
+                "link": "https://bg3.wiki/wiki/Wapira%27s_Crown",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Amulet of Silvanus",
+                "link": "https://bg3.wiki/wiki/Amulet_of_Silvanus",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Cap of Curing",
+                "link": "https://bg3.wiki/wiki/Cap_of_Curing",
+                "rarity": "uncommon"
+              },
+              {
+                "name": "Nature's Snare",
+                "link": "https://bg3.wiki/wiki/Nature%27s_Snare",
+                "rarity": "uncommon"
+              }
+            ]
+          },
+          {
+            "location": {
+              "name": "Secluded Cove",
+              "link": "https://bg3.wiki/wiki/Secluded_Cove"
+            },
+            "quests": [],
+            "items": [
+              {
+                "name": "Ring of Colour Spray",
+                "link": "https://bg3.wiki/wiki/Ring_of_Colour_Spray",
+                "rarity": "uncommon"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
