@@ -1,32 +1,8 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import progression from "../../progression.json";
-import { Location } from "./components/Location";
-
-type region = {
-    name: string;
-    link: string;
-    locations: location[];
-};
-
-type location = {
-    name: string;
-    link: string;
-    quests: quest[];
-    items: item[];
-};
-
-type quest = {
-    name: string;
-    link: string;
-};
-
-type item = {
-    name: string;
-    link: string;
-};
+import { Region } from "./components/Region";
 
 export type checkboxValues = {
     isChecked: boolean;
@@ -50,33 +26,6 @@ export default function Home() {
     useLayoutEffect(() => {
         localStorage.setItem(checkedBoxesKey, JSON.stringify(checkedBoxes));
     }, [checkedBoxes]);
-
-    const buildRegion = (region: region) => {
-        const percentComplete = getPercentage("region", region.name);
-        return (
-            <Accordion key={region.name} disableGutters>
-                <AccordionSummary>
-                    <div className="flex justify-between w-full">
-                        <h2>{region.name}</h2>
-                        {percentComplete}%
-                    </div>
-                </AccordionSummary>
-
-                <AccordionDetails>
-                    {region.locations.map((location) => (
-                        <Location
-                            key={location.name}
-                            location={location}
-                            regionName={region.name}
-                            checkedBoxes={checkedBoxes}
-                            onCheckboxChange={handleChange}
-                            getPercentage={getPercentage}
-                        />
-                    ))}
-                </AccordionDetails>
-            </Accordion>
-        );
-    };
 
     const getPercentage = (slug: keyof checkboxValues, value: string) => {
         const values = Object.values(checkedBoxes);
@@ -104,5 +53,14 @@ export default function Home() {
         });
     };
 
-    return <div>{buildRegion(progression.act1[0])}</div>;
+    return (
+        <div>
+            <Region
+                region={progression.act1[0]}
+                checkedBoxes={checkedBoxes}
+                onCheckboxChange={handleChange}
+                getPercentage={getPercentage}
+            />
+        </div>
+    );
 }
