@@ -1,15 +1,10 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
-import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
-    Checkbox,
-    FormControlLabel,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { QuestList } from "./components/QuestList";
 import progression from "../../progression.json";
+import { ItemList } from "./components/ItemList";
 
 type region = {
     name: string;
@@ -113,91 +108,19 @@ export default function Home() {
                     {!!location.items.length && (
                         <div className="flex flex-col">
                             <h4>Items</h4>
-                            {buildItems(
-                                location.items,
-                                regionName,
-                                location.name
-                            )}
+                            <ItemList
+                                items={location.items}
+                                regionName={regionName}
+                                locationName={location.name}
+                                checkedBoxes={checkedBoxes}
+                                onCheckboxChange={(name, values) =>
+                                    handleChange({ name, values })
+                                }
+                            />
                         </div>
                     )}
                 </AccordionDetails>
             </Accordion>
-        );
-    };
-
-    // const buildQuests = (
-    //     quests: quest[],
-    //     regionName: string,
-    //     locationName: string
-    // ) => {
-    //     return (
-    //         <>
-    //             {quests.map((quest: quest) => {
-    //                 if (!checkedBoxes[quest.name]) {
-    //                     checkedBoxes[quest.name] = {
-    //                         isChecked: false,
-    //                         region: regionName,
-    //                         location: locationName,
-    //                     };
-    //                 }
-    //                 return (
-    //                     <FormControlLabel
-    //                         label={quest.name}
-    //                         control={<Checkbox />}
-    //                         key={quest.name}
-    //                         onChange={(e, checked) => {
-    //                             handleChange({
-    //                                 name: quest.name,
-    //                                 values: {
-    //                                     isChecked: checked,
-    //                                     region: regionName,
-    //                                     location: locationName,
-    //                                 },
-    //                             });
-    //                         }}
-    //                         checked={checkedBoxes[quest.name].isChecked}
-    //                     />
-    //                 );
-    //             })}
-    //         </>
-    //     );
-    // };
-
-    const buildItems = (
-        items: item[],
-        regionName: string,
-        locationName: string
-    ) => {
-        return (
-            <>
-                {items.map((item: item) => {
-                    if (!checkedBoxes[item.name]) {
-                        checkedBoxes[item.name] = {
-                            isChecked: false,
-                            region: regionName,
-                            location: locationName,
-                        };
-                    }
-                    return (
-                        <FormControlLabel
-                            label={item.name}
-                            control={<Checkbox />}
-                            key={item.name}
-                            onChange={(e, checked) => {
-                                handleChange({
-                                    name: item.name,
-                                    values: {
-                                        isChecked: checked,
-                                        region: regionName,
-                                        location: locationName,
-                                    },
-                                });
-                            }}
-                            checked={checkedBoxes[item.name].isChecked}
-                        />
-                    );
-                })}
-            </>
         );
     };
 
@@ -225,7 +148,6 @@ export default function Home() {
         setCheckedBoxes({
             ...checkedBoxes,
         });
-        console.log(checkedBoxes);
     };
 
     return <div>{buildRegion(progression.act1[0])}</div>;
