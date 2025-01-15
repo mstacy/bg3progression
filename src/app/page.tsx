@@ -2,9 +2,8 @@
 
 import { useLayoutEffect, useState } from "react";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import { QuestList } from "./components/QuestList";
 import progression from "../../progression.json";
-import { ItemList } from "./components/ItemList";
+import { Location } from "./components/Location";
 
 type region = {
     name: string;
@@ -64,61 +63,16 @@ export default function Home() {
                 </AccordionSummary>
 
                 <AccordionDetails>
-                    {region.locations.map((location) =>
-                        buildLocation(location, region.name)
-                    )}
-                </AccordionDetails>
-            </Accordion>
-        );
-    };
-
-    const buildLocation = (location: location, regionName: string) => {
-        const percentComplete = getPercentage("location", location.name);
-        return (
-            <Accordion key={location.name} disableGutters>
-                <AccordionSummary>
-                    <div className="flex justify-between w-full">
-                        <h3>{location.name}</h3>
-                        {percentComplete}%
-                    </div>
-                </AccordionSummary>
-
-                <AccordionDetails
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "20px",
-                    }}
-                >
-                    {!!location.quests.length && (
-                        <div className="flex flex-col">
-                            <h4>Quests</h4>
-                            <QuestList
-                                quests={location.quests}
-                                regionName={regionName}
-                                locationName={location.name}
-                                checkedBoxes={checkedBoxes}
-                                onCheckboxChange={(name, values) =>
-                                    handleChange({ name, values })
-                                }
-                            />
-                        </div>
-                    )}
-
-                    {!!location.items.length && (
-                        <div className="flex flex-col">
-                            <h4>Items</h4>
-                            <ItemList
-                                items={location.items}
-                                regionName={regionName}
-                                locationName={location.name}
-                                checkedBoxes={checkedBoxes}
-                                onCheckboxChange={(name, values) =>
-                                    handleChange({ name, values })
-                                }
-                            />
-                        </div>
-                    )}
+                    {region.locations.map((location) => (
+                        <Location
+                            key={location.name}
+                            location={location}
+                            regionName={region.name}
+                            checkedBoxes={checkedBoxes}
+                            onCheckboxChange={handleChange}
+                            getPercentage={getPercentage}
+                        />
+                    ))}
                 </AccordionDetails>
             </Accordion>
         );
