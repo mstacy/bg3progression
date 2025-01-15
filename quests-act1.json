@@ -1,0 +1,224 @@
+{
+    "main_quests": [
+        {
+            "name": "Find a Cure",
+            "link": "https://bg3.wiki/wiki/Find_a_Cure"
+        },
+        {
+            "name": "Rescue the Druid Halsin",
+            "link": "https://bg3.wiki/wiki/Rescue_the_Druid_Halsin"
+        }
+    ],
+    "side_quests": {
+        "Nautiloid_Crash_Region": [
+            {
+                "name": "Explore the Ruins",
+                "link": "https://bg3.wiki/wiki/Explore_the_Ruins"
+            },
+            {
+                "name": "Find the Missing Shipment",
+                "link": "https://bg3.wiki/wiki/Find_the_Missing_Shipment"
+            },
+            {
+                "name": "Find the Nightsong",
+                "link": "https://bg3.wiki/wiki/Find_the_Nightsong"
+            },
+            {
+                "name": "Finish the Masterwork Weapon",
+                "link": "https://bg3.wiki/wiki/Finish_the_Masterwork_Weapon"
+            },
+            {
+                "name": "Free Lae'zel",
+                "link": "https://bg3.wiki/wiki/Free_Lae%27zel"
+            },
+            {
+                "name": "Hunt the Devil",
+                "link": "https://bg3.wiki/wiki/Hunt_the_Devil"
+            },
+            {
+                "name": "Rescue the Gnome",
+                "link": "https://bg3.wiki/wiki/Rescue_the_Gnome"
+            },
+            {
+                "name": "Rescue the Grand Duke",
+                "link": "https://bg3.wiki/wiki/Rescue_the_Grand_Duke"
+            },
+            {
+                "name": "Rescue the Trapped Man",
+                "link": "https://bg3.wiki/wiki/Rescue_the_Trapped_Man"
+            },
+            {
+                "name": "Save Mayrina",
+                "link": "https://bg3.wiki/wiki/Save_Mayrina"
+            },
+            {
+                "name": "Search the Cellar",
+                "link": "https://bg3.wiki/wiki/Search_the_Cellar"
+            },
+            {
+                "name": "Unlock the Ancient Tome",
+                "link": "https://bg3.wiki/wiki/Unlock_the_Ancient_Tome"
+            }
+        ],
+        "Emerald_Grove": [
+            {
+                "name": "Defeat the Goblins",
+                "link": "https://bg3.wiki/wiki/Defeat_the_Goblins"
+            },
+            {
+                "name": "Find Your Belongings",
+                "link": "https://bg3.wiki/wiki/Find_Your_Belongings"
+            },
+            {
+                "name": "Help Alfira Finish Her Song",
+                "link": "https://bg3.wiki/wiki/Help_Alfira_Finish_Her_Song"
+            },
+            {
+                "name": "Help Padirna",
+                "link": "https://bg3.wiki/wiki/Help_Padirna"
+            },
+            {
+                "name": "Investigate Kagha",
+                "link": "https://bg3.wiki/wiki/Investigate_Kagha"
+            },
+            {
+                "name": "Investigate the Beach",
+                "link": "https://bg3.wiki/wiki/Investigate_the_Beach"
+            },
+            {
+                "name": "Raid the Emerald Grove",
+                "link": "https://bg3.wiki/wiki/Raid_the_Emerald_Grove"
+            },
+            {
+                "name": "Rescue Volo",
+                "link": "https://bg3.wiki/wiki/Rescue_Volo"
+            },
+            {
+                "name": "Save Arabella",
+                "link": "https://bg3.wiki/wiki/Save_Arabella"
+            },
+            {
+                "name": "Save Findal",
+                "link": "https://bg3.wiki/wiki/Save_Findal"
+            },
+            {
+                "name": "Save the Goblin Sazza",
+                "link": "https://bg3.wiki/wiki/Save_the_Goblin_Sazza"
+            },
+            {
+                "name": "Save the Refugees",
+                "link": "https://bg3.wiki/wiki/Save_the_Refugees"
+            },
+            {
+                "name": "Steal the Sacred Idol",
+                "link": "https://bg3.wiki/wiki/Steal_the_Sacred_Idol"
+            }
+        ],
+        "Underdark": [
+            {
+                "name": "Avenge Glut's Circle",
+                "link": "https://bg3.wiki/wiki/Avenge_Glut%27s_Circle"
+            },
+            {
+                "name": "Defeat the Duergar Intruders",
+                "link": "https://bg3.wiki/wiki/Defeat_the_Duergar_Intruders"
+            },
+            {
+                "name": "Cure the Poisoned Gnome",
+                "link": "https://bg3.wiki/wiki/Cure_the_Poisoned_Gnome"
+            },
+            {
+                "name": "Find the Mushroom Picker",
+                "link": "https://bg3.wiki/wiki/Find_the_Mushroom_Picker"
+            },
+            {
+                "name": "Deliver Nere's Head",
+                "link": "https://bg3.wiki/wiki/Deliver_Nere%27s_Head"
+            },
+            {
+                "name": "Find the Missing Boots",
+                "link": "https://bg3.wiki/wiki/Find_the_Missing_Boots"
+            }
+        ],
+        "Grymforge": [
+            {
+                "name": "The Adamantine Forge",
+                "link": "https://bg3.wiki/wiki/The_Adamantine_Forge"
+            },
+            {
+                "name": "Free True Soul Nere",
+                "link": "https://bg3.wiki/wiki/Free_True_Soul_Nere"
+            },
+            {
+                "name": "Find Explosives",
+                "link": "https://bg3.wiki/wiki/Find_Explosives"
+            },
+            {
+                "name": "Blind the Absolute",
+                "link": "https://bg3.wiki/wiki/Blind_the_Absolute"
+            },
+            {
+                "name": "Save the Grymforge Gnomes",
+                "link": "https://bg3.wiki/wiki/Save_the_Grymforge_Gnomes"
+            }
+        ],
+        "Mountain_Pass": [
+            {
+                "name": "Explore Rosymorn Monastery",
+                "link": "https://bg3.wiki/wiki/Explore_Rosymorn_Monastery"
+            },
+            {
+                "name": "Find the Blood of Lathander Mace",
+                "link": "https://bg3.wiki/wiki/Find_the_Blood_of_Lathander_Mace"
+            },
+            {
+                "name": "Steal a Githyanki Egg",
+                "link": "https://bg3.wiki/wiki/Steal_a_Githyanki_Egg"
+            }
+        ],
+        "Shadow_Cursed_Lands": [
+            {
+                "name": "Rescue Wulbren",
+                "link": "https://bg3.wiki/wiki/Rescue_Wulbren"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "name": "Adopt the Owlbear Cub",
+                "link": "https://bg3.wiki/wiki/Adopt_the_Owlbear_Cub"
+            },
+            {
+                "name": "Collect Three Infernal Irons for Karlach",
+                "link": "https://bg3.wiki/wiki/Collect_Three_Infernal_Irons_for_Karlach"
+            },
+            {
+                "name": "Deal with Auntie Ethel",
+                "link": "https://bg3.wiki/wiki/Deal_with_Auntie_Ethel"
+            },
+            {
+                "name": "Talk to the Strange Ox",
+                "link": "https://bg3.wiki/wiki/Talk_to_the_Strange_Ox"
+            },
+            {
+                "name": "Confront the Monster Hunter looking for Astarion",
+                "link": "https://bg3.wiki/wiki/Confront_the_Monster_Hunter_looking_for_Astarion"
+            },
+            {
+                "name": "Save Mirkon from the Harpies",
+                "link": "https://bg3.wiki/wiki/Save_Mirkon_from_the_Harpies"
+            },
+            {
+                "name": "Get Branded by Gut",
+                "link": "https://bg3.wiki/wiki/Get_Branded_by_Gut"
+            },
+            {
+                "name": "Save/Yeet Barcus",
+                "link": "https://bg3.wiki/wiki/Save/Yeet_Barcus"
+            },
+            {
+                "name": "Save Oskar Fevras from Zhentarim",
+                "link": "https://bg3.wiki/wiki/Save_Oskar_Fevras_from_Zhentarim"
+            }
+        ]
+    }
+}
