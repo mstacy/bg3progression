@@ -55,12 +55,23 @@ export default function Home() {
 
     return (
         <div>
+            {/* {progression.act1.map((region) => (
             <Region
-                region={progression.act1[0]}
+                region={region}
                 checkedBoxes={checkedBoxes}
                 onCheckboxChange={handleChange}
                 getPercentage={getPercentage}
             />
+			))} */}
+            {progression.act1.map((region) => (
+                <Region
+                    key={region.name}
+                    region={region}
+                    checkedBoxes={checkedBoxes}
+                    onCheckboxChange={handleChange}
+                    getPercentage={getPercentage}
+                />
+            ))}
         </div>
     );
 }

@@ -1,29 +1,33 @@
 {
-    "prologue": [
+    "act1": [
         {
             "name": "Nautiloid",
             "link": "https://bg3.wiki/wiki/Nautiloid",
-            "quests": [
+            "locations": [
                 {
-                    "name": "Escape the Nautiloid",
-                    "link": "https://bg3.wiki/wiki/Escape_the_Nautiloid"
-                },
-                {
-                    "name": "Rescue the Illithids' Captive",
-                    "link": "https://bg3.wiki/wiki/Rescue_the_Illithids%27_Captive"
-                }
-            ],
-            "iteractions": [],
-            "items": [
-                {
-                    "name": "Everburn Blade",
-                    "link": "https://bg3.wiki/wiki/Everburn_Blade",
-                    "rarity": "uncommon"
+                    "name": "Nautiloid",
+                    "link": "https://bg3.wiki/wiki/Nautiloid",
+                    "quests": [
+                        {
+                            "name": "Escape the Nautiloid",
+                            "link": "https://bg3.wiki/wiki/Escape_the_Nautiloid"
+                        },
+                        {
+                            "name": "Rescue the Illithids' Captive",
+                            "link": "https://bg3.wiki/wiki/Rescue_the_Illithids%27_Captive"
+                        }
+                    ],
+                    "iteractions": [],
+                    "items": [
+                        {
+                            "name": "Everburn Blade",
+                            "link": "https://bg3.wiki/wiki/Everburn_Blade",
+                            "rarity": "uncommon"
+                        }
+                    ]
                 }
             ]
-        }
-    ],
-    "act1": [
+        },
         {
             "name": "Wilderness",
             "link": "https://bg3.wiki/wiki/Wilderness",
@@ -265,6 +269,11 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "Underdark",
+            "link": "https://bg3.wiki/wiki/Underdark",
+            "locations": []
         }
     ]
 }

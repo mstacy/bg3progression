@@ -48,7 +48,7 @@ export const Region = ({
             </AccordionSummary>
 
             <AccordionDetails>
-                {region.locations.map((location) => (
+                {region.locations.map((location, index) => (
                     <Location
                         key={location.name}
                         location={location}
@@ -56,6 +56,7 @@ export const Region = ({
                         checkedBoxes={checkedBoxes}
                         onCheckboxChange={onCheckboxChange}
                         getPercentage={getPercentage}
+                        index={index}
                     />
                 ))}
             </AccordionDetails>
