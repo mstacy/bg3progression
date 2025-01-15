@@ -8,6 +8,7 @@ import {
     Checkbox,
     FormControlLabel,
 } from "@mui/material";
+import { QuestList } from "./components/QuestList";
 import progression from "../../progression.json";
 
 type region = {
@@ -33,7 +34,7 @@ type item = {
     link: string;
 };
 
-type checkboxValues = {
+export type checkboxValues = {
     isChecked: boolean;
     region: string;
     location: string;
@@ -97,11 +98,15 @@ export default function Home() {
                     {!!location.quests.length && (
                         <div className="flex flex-col">
                             <h4>Quests</h4>
-                            {buildQuests(
-                                location.quests,
-                                regionName,
-                                location.name
-                            )}
+                            <QuestList
+                                quests={location.quests}
+                                regionName={regionName}
+                                locationName={location.name}
+                                checkedBoxes={checkedBoxes}
+                                onCheckboxChange={(name, values) =>
+                                    handleChange({ name, values })
+                                }
+                            />
                         </div>
                     )}
 
@@ -120,43 +125,43 @@ export default function Home() {
         );
     };
 
-    const buildQuests = (
-        quests: quest[],
-        regionName: string,
-        locationName: string
-    ) => {
-        return (
-            <>
-                {quests.map((quest: quest) => {
-                    if (!checkedBoxes[quest.name]) {
-                        checkedBoxes[quest.name] = {
-                            isChecked: false,
-                            region: regionName,
-                            location: locationName,
-                        };
-                    }
-                    return (
-                        <FormControlLabel
-                            label={quest.name}
-                            control={<Checkbox />}
-                            key={quest.name}
-                            onChange={(e, checked) => {
-                                handleChange({
-                                    name: quest.name,
-                                    values: {
-                                        isChecked: checked,
-                                        region: regionName,
-                                        location: locationName,
-                                    },
-                                });
-                            }}
-                            checked={checkedBoxes[quest.name].isChecked}
-                        />
-                    );
-                })}
-            </>
-        );
-    };
+    // const buildQuests = (
+    //     quests: quest[],
+    //     regionName: string,
+    //     locationName: string
+    // ) => {
+    //     return (
+    //         <>
+    //             {quests.map((quest: quest) => {
+    //                 if (!checkedBoxes[quest.name]) {
+    //                     checkedBoxes[quest.name] = {
+    //                         isChecked: false,
+    //                         region: regionName,
+    //                         location: locationName,
+    //                     };
+    //                 }
+    //                 return (
+    //                     <FormControlLabel
+    //                         label={quest.name}
+    //                         control={<Checkbox />}
+    //                         key={quest.name}
+    //                         onChange={(e, checked) => {
+    //                             handleChange({
+    //                                 name: quest.name,
+    //                                 values: {
+    //                                     isChecked: checked,
+    //                                     region: regionName,
+    //                                     location: locationName,
+    //                                 },
+    //                             });
+    //                         }}
+    //                         checked={checkedBoxes[quest.name].isChecked}
+    //                     />
+    //                 );
+    //             })}
+    //         </>
+    //     );
+    // };
 
     const buildItems = (
         items: item[],
@@ -196,14 +201,16 @@ export default function Home() {
         );
     };
 
-    const getPercentage = (slug: string, value: string) => {
+    const getPercentage = (slug: keyof checkboxValues, value: string) => {
         const values = Object.values(checkedBoxes);
         if (!values.length) return 0;
 
         const checks = values.filter(
             (check: checkboxValues) => check[slug] === value
         );
+
         const checked = checks.filter((check) => check.isChecked);
+        if (!checked.length) return 0;
         return ((checked.length / checks.length) * 100).toFixed(0);
     };
 
