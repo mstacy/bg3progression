@@ -43,7 +43,10 @@ export const Location = ({
         <Accordion
             key={location.name}
             disableGutters
-            defaultExpanded={index === 0}
+            // defaultExpanded={index === 0}
+            slots={{
+                heading: "div",
+            }}
         >
             <AccordionSummary>
                 <div className="flex justify-between w-full">

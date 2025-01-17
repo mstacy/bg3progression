@@ -39,7 +39,13 @@ export const Region = ({
     const percentComplete = getPercentage("region", region.name);
 
     return (
-        <Accordion key={region.name} disableGutters>
+        <Accordion
+            key={region.name}
+            disableGutters
+            slots={{
+                heading: "div",
+            }}
+        >
             <AccordionSummary>
                 <div className="flex justify-between w-full">
                     <h2>{region.name}</h2>
