@@ -21,30 +21,33 @@ export const ItemList = ({
 }: ItemListProps) => {
     return (
         <>
-            {items.map((item) => {
-                if (!checkedBoxes[item.name]) {
-                    checkedBoxes[item.name] = {
-                        isChecked: false,
-                        region: regionName,
-                        location: locationName,
-                    };
-                }
-                return (
-                    <FormControlLabel
-                        label={item.name}
-                        control={<Checkbox />}
-                        key={item.name}
-                        onChange={(e, checked) => {
-                            onCheckboxChange(item.name, {
-                                isChecked: checked,
-                                region: regionName,
-                                location: locationName,
-                            });
-                        }}
-                        checked={checkedBoxes[item.name].isChecked}
-                    />
-                );
-            })}
+            <h4>Items</h4>
+            <div className="flex flex-col">
+                {items.map((item) => {
+                    if (!checkedBoxes[item.name]) {
+                        checkedBoxes[item.name] = {
+                            isChecked: false,
+                            region: regionName,
+                            location: locationName,
+                        };
+                    }
+                    return (
+                        <FormControlLabel
+                            label={item.name}
+                            control={<Checkbox />}
+                            key={item.name}
+                            onChange={(e, checked) => {
+                                onCheckboxChange(item.name, {
+                                    isChecked: checked,
+                                    region: regionName,
+                                    location: locationName,
+                                });
+                            }}
+                            checked={checkedBoxes[item.name].isChecked}
+                        />
+                    );
+                })}
+            </div>
         </>
     );
 };

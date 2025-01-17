@@ -21,30 +21,33 @@ export const QuestList = ({
 }) => {
     return (
         <>
-            {quests.map((quest: quest) => {
-                if (!checkedBoxes[quest.name]) {
-                    checkedBoxes[quest.name] = {
-                        isChecked: false,
-                        region: regionName,
-                        location: locationName,
-                    };
-                }
-                return (
-                    <FormControlLabel
-                        label={quest.name}
-                        control={<Checkbox />}
-                        key={quest.name}
-                        onChange={(e, checked) => {
-                            onCheckboxChange(quest.name, {
-                                isChecked: checked,
-                                region: regionName,
-                                location: locationName,
-                            });
-                        }}
-                        checked={checkedBoxes[quest.name].isChecked}
-                    />
-                );
-            })}
+            <h4>Quests</h4>
+            <div className="flex flex-col">
+                {quests.map((quest: quest) => {
+                    if (!checkedBoxes[quest.name]) {
+                        checkedBoxes[quest.name] = {
+                            isChecked: false,
+                            region: regionName,
+                            location: locationName,
+                        };
+                    }
+                    return (
+                        <FormControlLabel
+                            label={quest.name}
+                            control={<Checkbox />}
+                            key={quest.name}
+                            onChange={(e, checked) => {
+                                onCheckboxChange(quest.name, {
+                                    isChecked: checked,
+                                    region: regionName,
+                                    location: locationName,
+                                });
+                            }}
+                            checked={checkedBoxes[quest.name].isChecked}
+                        />
+                    );
+                })}
+            </div>
         </>
     );
 };

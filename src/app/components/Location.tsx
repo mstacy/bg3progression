@@ -63,33 +63,27 @@ export const Location = ({
                 }}
             >
                 {!!location.quests.length && (
-                    <div className="flex flex-col">
-                        <h4>Quests</h4>
-                        <QuestList
-                            quests={location.quests}
-                            regionName={regionName}
-                            locationName={location.name}
-                            checkedBoxes={checkedBoxes}
-                            onCheckboxChange={(name, values) =>
-                                onCheckboxChange({ name, values })
-                            }
-                        />
-                    </div>
+                    <QuestList
+                        quests={location.quests}
+                        regionName={regionName}
+                        locationName={location.name}
+                        checkedBoxes={checkedBoxes}
+                        onCheckboxChange={(name, values) =>
+                            onCheckboxChange({ name, values })
+                        }
+                    />
                 )}
 
                 {!!location.items.length && (
-                    <div className="flex flex-col">
-                        <h4>Items</h4>
-                        <ItemList
-                            items={location.items}
-                            regionName={regionName}
-                            locationName={location.name}
-                            checkedBoxes={checkedBoxes}
-                            onCheckboxChange={(name, values) =>
-                                onCheckboxChange({ name, values })
-                            }
-                        />
-                    </div>
+                    <ItemList
+                        items={location.items}
+                        regionName={regionName}
+                        locationName={location.name}
+                        checkedBoxes={checkedBoxes}
+                        onCheckboxChange={(name, values) =>
+                            onCheckboxChange({ name, values })
+                        }
+                    />
                 )}
             </AccordionDetails>
         </Accordion>
