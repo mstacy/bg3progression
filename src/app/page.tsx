@@ -3,6 +3,7 @@
 import { useLayoutEffect, useState } from "react";
 import progression from "../../progression.json";
 import { Region } from "./components/Region";
+import { getPercentage } from "./utils";
 
 export type checkboxValues = {
     isChecked: boolean;
@@ -11,7 +12,7 @@ export type checkboxValues = {
 };
 
 export default function Home() {
-    const checkedBoxesKey = "checkedBoxes";
+    const checkedBoxesKey = "act1";
     const [checkedBoxes, setCheckedBoxes] = useState<
         Record<string, checkboxValues>
     >({});
@@ -24,21 +25,14 @@ export default function Home() {
     }, []);
 
     useLayoutEffect(() => {
-        localStorage.setItem(checkedBoxesKey, JSON.stringify(checkedBoxes));
+        const handler = setTimeout(() => {
+            localStorage.setItem(checkedBoxesKey, JSON.stringify(checkedBoxes));
+        }, 1000);
+
+        return () => {
+            clearTimeout(handler);
+        };
     }, [checkedBoxes]);
-
-    const getPercentage = (slug: keyof checkboxValues, value: string) => {
-        const values = Object.values(checkedBoxes);
-        if (!values.length) return 0;
-
-        const checks = values.filter(
-            (check: checkboxValues) => check[slug] === value
-        );
-
-        const checked = checks.filter((check) => check.isChecked);
-        if (!checked.length) return 0;
-        return ((checked.length / checks.length) * 100).toFixed(0);
-    };
 
     const handleChange = ({
         name,
@@ -55,21 +49,15 @@ export default function Home() {
 
     return (
         <div>
-            {/* {progression.act1.map((region) => (
-            <Region
-                region={region}
-                checkedBoxes={checkedBoxes}
-                onCheckboxChange={handleChange}
-                getPercentage={getPercentage}
-            />
-			))} */}
             {progression.act1.map((region) => (
                 <Region
                     key={region.name}
                     region={region}
                     checkedBoxes={checkedBoxes}
                     onCheckboxChange={handleChange}
-                    getPercentage={getPercentage}
+                    getPercentage={(slug, value) =>
+                        getPercentage(checkedBoxes, slug, value)
+                    }
                 />
             ))}
         </div>
