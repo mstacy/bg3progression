@@ -37,20 +37,20 @@
                     "link": "https://bg3.wiki/wiki/Ravaged_Beach",
                     "quests": [
                         {
-                            "name": "Find a Cure",
-                            "link": "https://bg3.wiki/wiki/Find_a_Cure"
-                        },
-                        {
                             "name": "Daughter of Darkness",
                             "link": "https://bg3.wiki/wiki/Daughter_of_Darkness"
                         },
                         {
-                            "name": "The Pale Elf",
-                            "link": "https://bg3.wiki/wiki/The_Pale_Elf"
+                            "name": "Explore the Ruins",
+                            "link": "https://bg3.wiki/wiki/Explore_the_Ruins"
                         },
                         {
-                            "name": "The Wizard of Waterdeep",
-                            "link": "https://bg3.wiki/wiki/The_Wizard_of_Waterdeep"
+                            "name": "Find a Cure",
+                            "link": "https://bg3.wiki/wiki/Find_a_Cure"
+                        },
+                        {
+                            "name": "Find the Githyanki Crèche",
+                            "link": "https://bg3.wiki/wiki/Find_the_Githyanki_Crèche"
                         },
                         {
                             "name": "Free Lae'zel",
@@ -65,12 +65,12 @@
                             "link": "https://bg3.wiki/wiki/The_Githyanki_Warrior"
                         },
                         {
-                            "name": "Find the Githyanki Crèche",
-                            "link": "https://bg3.wiki/wiki/Find_the_Githyanki_Crèche"
+                            "name": "The Pale Elf",
+                            "link": "https://bg3.wiki/wiki/The_Pale_Elf"
                         },
                         {
-                            "name": "Explore the Ruins",
-                            "link": "https://bg3.wiki/wiki/Explore_the_Ruins"
+                            "name": "The Wizard of Waterdeep",
+                            "link": "https://bg3.wiki/wiki/The_Wizard_of_Waterdeep"
                         }
                     ],
                     "interactions": [],
@@ -92,84 +92,79 @@
                     "link": "https://bg3.wiki/wiki/Emerald_Grove",
                     "quests": [
                         {
-                            "name": "Save the Refugees",
-                            "link": "https://bg3.wiki/wiki/Save_the_Refugees"
-                        },
-                        {
-                            "name": "The Blade of Frontiers",
-                            "link": "https://bg3.wiki/wiki/The_Blade_of_Frontiers"
-                        },
-                        {
                             "name": "Find Your Belongings",
                             "link": "https://bg3.wiki/wiki/Find_Your_Belongings"
-                        },
-                        {
-                            "name": "Investigate the Beach",
-                            "link": "https://bg3.wiki/wiki/Investigate_the_Beach"
-                        },
-                        {
-                            "name": "Save Arabella",
-                            "link": "https://bg3.wiki/wiki/Save_Arabella"
                         },
                         {
                             "name": "Rescue the Druid Halsin",
                             "link": "https://bg3.wiki/wiki/Rescue_the_Druid_Halsin"
                         },
                         {
-                            "name": "Steal the Sacred Idol",
-                            "link": "https://bg3.wiki/wiki/Steal_the_Sacred_Idol"
+                            "name": "Save Arabella",
+                            "link": "https://bg3.wiki/wiki/Save_Arabella"
                         },
                         {
                             "name": "Save the Goblin Sazza",
                             "link": "https://bg3.wiki/wiki/Save_the_Goblin_Sazza"
+                        },
+                        {
+                            "name": "Save the Refugees",
+                            "link": "https://bg3.wiki/wiki/Save_the_Refugees"
+                        },
+                        {
+                            "name": "Steal the Sacred Idol",
+                            "link": "https://bg3.wiki/wiki/Steal_the_Sacred_Idol"
+                        },
+                        {
+                            "name": "The Blade of Frontiers",
+                            "link": "https://bg3.wiki/wiki/The_Blade_of_Frontiers"
                         }
                     ],
                     "interactions": [
                         {
-                            "name": "Meli - Return the Locket",
+                            "name": "Alfira - Performing together",
+                            "link": "https://bg3.wiki/wiki/Alfira#Performing_together"
+                        },
+                        {
+                            "name": "Barth - Return the Locket",
                             "link": "https://bg3.wiki/wiki/Return_the_Locket"
+                        },
+                        {
+                            "name": "Findal - Save?",
+                            "link": "https://bg3.wiki/wiki/Findal"
                         },
                         {
                             "name": "Nadira - Bugbear Assassin",
                             "link": "https://bg3.wiki/wiki/Nadira#Act_One"
                         },
                         {
-                            "name": "Alfira - Performing together",
-                            "link": "https://bg3.wiki/wiki/Alfira#Performing_together"
+                            "name": "Strange Ox - Chat",
+                            "link": "https://bg3.wiki/wiki/Strange_Ox"
                         },
                         {
                             "name": "Volo - Chat",
                             "link": "https://bg3.wiki/wiki/Volo#Act_One"
-                        },
-                        {
-                            "name": "Findal - Save?",
-                            "link": "https://bg3.wiki/wiki/Findal"
                         }
                     ],
                     "items": [
+                        {
+                            "name": "Amulet of Silvanus",
+                            "link": "https://bg3.wiki/wiki/Amulet_of_Silvanus",
+                            "rarity": "uncommon"
+                        },
                         {
                             "name": "Broodmother's Revenge",
                             "link": "https://bg3.wiki/wiki/Broodmother%27s_Revenge",
                             "rarity": "uncommon"
                         },
                         {
-                            "name": "Key of the Ancients",
-                            "link": "https://bg3.wiki/wiki/Key_of_the_Ancients",
+                            "name": "Cap of Curing",
+                            "link": "https://bg3.wiki/wiki/Cap_of_Curing",
                             "rarity": "uncommon"
                         },
                         {
-                            "name": "Robe of Summer",
-                            "link": "https://bg3.wiki/wiki/Robe_of_Summer",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Shapeshifter's Boon Ring",
-                            "link": "https://bg3.wiki/wiki/Shapeshifter%27s_Boon_Ring",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Sorrow",
-                            "link": "https://bg3.wiki/wiki/Sorrow",
+                            "name": "Corellon's Grace",
+                            "link": "https://bg3.wiki/wiki/Corellon%27s_Grace",
                             "rarity": "uncommon"
                         },
                         {
@@ -188,6 +183,36 @@
                             "rarity": "uncommon"
                         },
                         {
+                            "name": "Hellrider's Pride",
+                            "link": "https://bg3.wiki/wiki/Hellrider%27s_Pride",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Hunting Shortbow",
+                            "link": "https://bg3.wiki/wiki/Hunting_Shortbow",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Key of the Ancients",
+                            "link": "https://bg3.wiki/wiki/Key_of_the_Ancients",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Komira's Locket",
+                            "link": "https://bg3.wiki/wiki/Komira%27s_Locket",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Nature's Snare",
+                            "link": "https://bg3.wiki/wiki/Nature%27s_Snare",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Pale Oak",
+                            "link": "https://bg3.wiki/wiki/Pale_Oak",
+                            "rarity": "uncommon"
+                        },
+                        {
                             "name": "Rain Dancer",
                             "link": "https://bg3.wiki/wiki/Rain_Dancer",
                             "rarity": "uncommon"
@@ -198,18 +223,13 @@
                             "rarity": "uncommon"
                         },
                         {
-                            "name": "Spellthief",
-                            "link": "https://bg3.wiki/wiki/Spellthief",
-                            "rarity": "uncommon"
+                            "name": "Ring of Protection",
+                            "link": "https://bg3.wiki/wiki/Ring_of_Protection",
+                            "rarity": "rare"
                         },
                         {
-                            "name": "Corellon's Grace",
-                            "link": "https://bg3.wiki/wiki/Corellon%27s_Grace",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Hunting Shortbow",
-                            "link": "https://bg3.wiki/wiki/Hunting_Shortbow",
+                            "name": "Robe of Summer",
+                            "link": "https://bg3.wiki/wiki/Robe_of_Summer",
                             "rarity": "uncommon"
                         },
                         {
@@ -218,48 +238,23 @@
                             "rarity": "uncommon"
                         },
                         {
-                            "name": "The Whispering Promise",
-                            "link": "https://bg3.wiki/wiki/The_Whispering_Promise",
+                            "name": "Shapeshifter's Boon Ring",
+                            "link": "https://bg3.wiki/wiki/Shapeshifter%27s_Boon_Ring",
                             "rarity": "uncommon"
                         },
                         {
-                            "name": "Hellrider's Pride",
-                            "link": "https://bg3.wiki/wiki/Hellrider%27s_Pride",
+                            "name": "Sorrow",
+                            "link": "https://bg3.wiki/wiki/Sorrow",
                             "rarity": "uncommon"
                         },
                         {
-                            "name": "Komira's Locket",
-                            "link": "https://bg3.wiki/wiki/Komira%27s_Locket",
+                            "name": "Spellthief",
+                            "link": "https://bg3.wiki/wiki/Spellthief",
                             "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Pale Oak",
-                            "link": "https://bg3.wiki/wiki/Pale_Oak",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Ring of Protection",
-                            "link": "https://bg3.wiki/wiki/Ring_of_Protection",
-                            "rarity": "rare"
                         },
                         {
                             "name": "Wapira's Crown",
                             "link": "https://bg3.wiki/wiki/Wapira%27s_Crown",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Amulet of Silvanus",
-                            "link": "https://bg3.wiki/wiki/Amulet_of_Silvanus",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Cap of Curing",
-                            "link": "https://bg3.wiki/wiki/Cap_of_Curing",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "Nature's Snare",
-                            "link": "https://bg3.wiki/wiki/Nature%27s_Snare",
                             "rarity": "uncommon"
                         }
                     ]
@@ -267,7 +262,12 @@
                 {
                     "name": "Secluded Cove",
                     "link": "https://bg3.wiki/wiki/Secluded_Cove",
-                    "quests": [],
+                    "quests": [
+                        {
+                            "name": "Investigate the Beach",
+                            "link": "https://bg3.wiki/wiki/Investigate_the_Beach"
+                        }
+                    ],
                     "interactions": [],
                     "items": [
                         {
@@ -276,12 +276,200 @@
                             "rarity": "uncommon"
                         }
                     ]
+                },
+                {
+                    "name": "Forest",
+                    "link": "https://bg3.wiki/wiki/Forest",
+                    "quests": [],
+                    "interactions": [
+                        {
+                            "name": "Owlbear Nest",
+                            "link": "https://bg3.wiki/wiki/Owlbear_Nest"
+                        },
+                        {
+                            "name": "",
+                            "link": ""
+                        },
+                        {
+                            "name": "",
+                            "link": ""
+                        }
+                    ],
+                    "items": [
+                        {
+                            "name": "",
+                            "link": ""
+                        },
+                        {
+                            "name": "",
+                            "link": ""
+                        },
+                        {
+                            "name": "",
+                            "link": ""
+                        },
+                        {
+                            "name": "",
+                            "link": ""
+                        },
+                        {
+                            "name": "",
+                            "link": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Blighted Village",
+                    "link": "https://bg3.wiki/wiki/Blighted_Village",
+                    "quests": [
+                        {
+                            "name": "Search the Cellar",
+                            "link": "https://bg3.wiki/wiki/Search_the_Cellar"
+                        },
+                        {
+                            "name": "Unlock the Ancient Tome",
+                            "link": "https://bg3.wiki/wiki/Unlock_the_Ancient_Tome"
+                        },
+                        {
+                            "name": "Finish the Masterwork Weapon",
+                            "link": "https://bg3.wiki/wiki/Finish_the_Masterwork_Weapon"
+                        },
+                        {
+                            "name": "Rescue the Gnome",
+                            "link": "https://bg3.wiki/wiki/Rescue_the_Gnome"
+                        },
+                        {
+                            "name": "The Hellion's Heart",
+                            "link": "https://bg3.wiki/wiki/The_Hellion%27s_Heart"
+                        }
+                    ],
+                    "interactions": [
+                        {
+                            "name": "Owlbear Nest",
+                            "link": "https://bg3.wiki/wiki/Owlbear_Nest"
+                        },
+                        {
+                            "name": "Whispering Depths",
+                            "link": "https://bg3.wiki/wiki/Whispering_Depths"
+                        },
+                        {
+                            "name": "",
+                            "link": ""
+                        }
+                    ],
+                    "items": [
+                        {
+                            "name": "",
+                            "link": ""
+                        },
+                        {
+                            "name": "Head of a Broken Spear",
+                            "link": "https://bg3.wiki/wiki/Head_of_a_Broken_Spear"
+                        },
+                        {
+                            "name": "Shaft of a Broken Spear",
+                            "link": "https://bg3.wiki/wiki/Shaft_of_a_Broken_Spear"
+                        },
+                        {
+                            "name": "Fleetfingers",
+                            "link": "https://bg3.wiki/wiki/Fleetfingers"
+                        },
+                        {
+                            "name": "Moondrop Pendant",
+                            "link": "https://bg3.wiki/wiki/Moondrop_Pendant"
+                        },
+                        {
+                            "name": "Owlbear Egg",
+                            "link": "https://bg3.wiki/wiki/Owlbear_Egg"
+                        },
+                        {
+                            "name": "The Oak Father's Embrace",
+                            "link": "https://bg3.wiki/wiki/The_Oak_Father%27s_Embrace"
+                        },
+                        {
+                            "name": "Dark Amethyst",
+                            "link": "https://bg3.wiki/wiki/Dark_Amethyst"
+                        },
+                        {
+                            "name": "Poisoner's Robe",
+                            "link": "https://bg3.wiki/wiki/Poisoner%27s_Robe"
+                        },
+                        {
+                            "name": "Spiderstep Boots",
+                            "link": "https://bg3.wiki/wiki/Spiderstep_Boots"
+                        },
+                        {
+                            "name": "Spurred Band",
+                            "link": "https://bg3.wiki/wiki/Spurred_Band"
+                        },
+                        {
+                            "name": "Bracers of Defence",
+                            "link": "https://bg3.wiki/wiki/Bracers_of_Defence"
+                        },
+                        {
+                            "name": "Necromancy of Thay",
+                            "link": "https://bg3.wiki/wiki/Necromancy_of_Thay"
+                        },
+                        {
+                            "name": "Scroll of Summon Quasit",
+                            "link": "https://bg3.wiki/wiki/Scroll_of_Summon_Quasit"
+                        },
+                        {
+                            "name": "Haste Helm",
+                            "link": "https://bg3.wiki/wiki/Haste_Helm",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Sussur Dagger",
+                            "link": "https://bg3.wiki/wiki/Sussur_Dagger",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Sussur Greatsword",
+                            "link": "https://bg3.wiki/wiki/Sussur_Greatsword",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Sussur Sickle",
+                            "link": "https://bg3.wiki/wiki/Sussur_Sickle",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "The Speedy Lightfeet",
+                            "link": "https://bg3.wiki/wiki/The_Speedy_Lightfeet",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Very Heavy Greataxe",
+                            "link": "https://bg3.wiki/wiki/Very_Heavy_Greataxe",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Warped Headband of Intellect",
+                            "link": "https://bg3.wiki/wiki/Warped_Headband_of_Intellect",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Steelforged Sword",
+                            "link": "https://bg3.wiki/wiki/Steelforged_Sword",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Infernal Iron",
+                            "link": "https://bg3.wiki/wiki/Infernal_Iron"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "Underdark",
             "link": "https://bg3.wiki/wiki/Underdark",
+            "locations": []
+        },
+        {
+            "name": "Rosymorn Monastery Trail",
+            "link": "https://bg3.wiki/wiki/Rosymorn_Monastery_Trail",
             "locations": []
         }
     ]
