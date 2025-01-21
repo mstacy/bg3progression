@@ -41,17 +41,22 @@ export const Region = ({
             </AccordionSummary>
 
             <AccordionDetails>
-                {region.locations.map((location, index) => (
-                    <Location
-                        key={location.name}
-                        location={location}
-                        regionName={region.name}
-                        checkedBoxes={checkedBoxes}
-                        onCheckboxChange={onCheckboxChange}
-                        getPercentage={getPercentage}
-                        index={index}
-                    />
-                ))}
+                {region.locations.map(
+                    (
+                        location
+                        // index
+                    ) => (
+                        <Location
+                            key={location.name}
+                            location={location}
+                            regionName={region.name}
+                            checkedBoxes={checkedBoxes}
+                            onCheckboxChange={onCheckboxChange}
+                            getPercentage={getPercentage}
+                            // index={index}
+                        />
+                    )
+                )}
             </AccordionDetails>
         </Accordion>
     );

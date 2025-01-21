@@ -17,7 +17,7 @@
                             "link": "https://bg3.wiki/wiki/Rescue_the_Illithids%27_Captive"
                         }
                     ],
-                    "iteractions": [],
+                    "interactions": [],
                     "items": [
                         {
                             "name": "Everburn Blade",
@@ -73,7 +73,7 @@
                             "link": "https://bg3.wiki/wiki/Explore_the_Ruins"
                         }
                     ],
-                    "iteractions": [],
+                    "interactions": [],
                     "items": [
                         {
                             "name": "Amulet of Lost Voices",
@@ -124,7 +124,7 @@
                             "link": "https://bg3.wiki/wiki/Save_the_Goblin_Sazza"
                         }
                     ],
-                    "iteractions": [
+                    "interactions": [
                         {
                             "name": "Meli - Return the Locket",
                             "link": "https://bg3.wiki/wiki/Return_the_Locket"
@@ -268,7 +268,7 @@
                     "name": "Secluded Cove",
                     "link": "https://bg3.wiki/wiki/Secluded_Cove",
                     "quests": [],
-                    "iteractions": [],
+                    "interactions": [],
                     "items": [
                         {
                             "name": "Ring of Colour Spray",

@@ -21,8 +21,8 @@ export const Location = ({
     checkedBoxes,
     onCheckboxChange,
     getPercentage,
-    index,
-}: {
+}: // index,
+{
     location: Location;
     regionName: string;
     checkedBoxes: Record<string, checkboxValues>;
@@ -34,7 +34,7 @@ export const Location = ({
         slug: keyof checkboxValues,
         value: string
     ) => number | string;
-    index: number;
+    // index: number;
 }) => {
     const percentComplete = getPercentage("location", location.name);
 
