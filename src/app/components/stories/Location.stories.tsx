@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Location } from "../Location";
+import { checkboxValues } from "../../page";
 
 const meta: Meta<typeof Location> = {
     component: Location,
@@ -28,7 +29,13 @@ const mockData = {
     },
     regionName: "Wilderness",
     checkedBoxes: {},
-    onCheckboxChange: ({ name, values }) => {
+    onCheckboxChange: ({
+        name,
+        values,
+    }: {
+        name: string;
+        values: checkboxValues;
+    }) => {
         console.log("Checkbox changed:", name, values);
     },
     getPercentage: () => 0,

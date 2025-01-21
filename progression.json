@@ -53,6 +53,10 @@
                             "link": "https://bg3.wiki/wiki/The_Wizard_of_Waterdeep"
                         },
                         {
+                            "name": "Free Lae'zel",
+                            "link": "https://bg3.wiki/wiki/Get_Help_from_Healer_Nettie"
+                        },
+                        {
                             "name": "Get Help from Healer Nettie",
                             "link": "https://bg3.wiki/wiki/Get_Help_from_Healer_Nettie"
                         },
@@ -71,6 +75,11 @@
                     ],
                     "iteractions": [],
                     "items": [
+                        {
+                            "name": "Amulet of Lost Voices",
+                            "link": "https://bg3.wiki/wiki/The_Amulet_of_Lost_Voices",
+                            "rarity": "rare"
+                        },
                         {
                             "name": "Gloves of Power",
                             "link": "https://bg3.wiki/wiki/Gloves_of_Power",
@@ -91,10 +100,6 @@
                             "link": "https://bg3.wiki/wiki/The_Blade_of_Frontiers"
                         },
                         {
-                            "name": "Find Doni",
-                            "link": "https://bg3.wiki/wiki/Find_Doni"
-                        },
-                        {
                             "name": "Find Your Belongings",
                             "link": "https://bg3.wiki/wiki/Find_Your_Belongings"
                         },
@@ -103,12 +108,12 @@
                             "link": "https://bg3.wiki/wiki/Investigate_the_Beach"
                         },
                         {
-                            "name": "Return the Locket",
-                            "link": "https://bg3.wiki/wiki/Return_the_Locket"
-                        },
-                        {
                             "name": "Save Arabella",
                             "link": "https://bg3.wiki/wiki/Save_Arabella"
+                        },
+                        {
+                            "name": "Rescue the Druid Halsin",
+                            "link": "https://bg3.wiki/wiki/Rescue_the_Druid_Halsin"
                         },
                         {
                             "name": "Steal the Sacred Idol",
@@ -117,13 +122,13 @@
                         {
                             "name": "Save the Goblin Sazza",
                             "link": "https://bg3.wiki/wiki/Save_the_Goblin_Sazza"
-                        },
-                        {
-                            "name": "The Hellion's Heart",
-                            "link": "https://bg3.wiki/wiki/The_Hellion%27s_Heart"
                         }
                     ],
                     "iteractions": [
+                        {
+                            "name": "Meli - Return the Locket",
+                            "link": "https://bg3.wiki/wiki/Return_the_Locket"
+                        },
                         {
                             "name": "Nadira - Bugbear Assassin",
                             "link": "https://bg3.wiki/wiki/Nadira#Act_One"
@@ -133,7 +138,7 @@
                             "link": "https://bg3.wiki/wiki/Alfira#Performing_together"
                         },
                         {
-                            "name": "Volo",
+                            "name": "Volo - Chat",
                             "link": "https://bg3.wiki/wiki/Volo#Act_One"
                         },
                         {
