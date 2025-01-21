@@ -1,4 +1,9 @@
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Button,
+} from "@mui/material";
 import { QuestList } from "./QuestList";
 import { InteractionList } from "./InteractionList";
 import { ItemList } from "./ItemList";
@@ -48,9 +53,17 @@ export const Location = ({
             }}
         >
             <AccordionSummary>
-                <div className="flex justify-between w-full">
+                <div className="flex justify-between w-full items-center">
                     <h3>{location.name}</h3>
-                    {percentComplete}%
+
+                    <div className="flex justify-between items-center">
+                        <Button href={location.link} target="_blank">
+                            View
+                        </Button>
+                        <div className="w-10 text-right">
+                            {percentComplete}%
+                        </div>
+                    </div>
                 </div>
             </AccordionSummary>
 

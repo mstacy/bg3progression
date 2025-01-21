@@ -1,4 +1,9 @@
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Button,
+} from "@mui/material";
 import { Location } from "./Location";
 import { checkboxValues } from "../page";
 
@@ -34,9 +39,16 @@ export const Region = ({
             }}
         >
             <AccordionSummary>
-                <div className="flex justify-between w-full">
+                <div className="flex justify-between w-full items-center">
                     <h2>{region.name}</h2>
-                    {percentComplete}%
+                    <div className="flex justify-between items-center">
+                        <Button href={region.link} target="_blank">
+                            View
+                        </Button>
+                        <div className="w-10 text-right">
+                            {percentComplete}%
+                        </div>
+                    </div>
                 </div>
             </AccordionSummary>
 
