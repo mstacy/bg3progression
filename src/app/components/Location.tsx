@@ -1,21 +1,29 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { QuestList } from "./QuestList";
+import { InteractionList } from "./InteractionList";
 import { ItemList } from "./ItemList";
 import { checkboxValues } from "../page";
+import { Quest } from "./QuestList";
+import { Interaction } from "./InteractionList";
+import { Item } from "./ItemList";
 
-type LocationProps = {
-    location: {
-        name: string;
-        link: string;
-        quests: {
-            name: string;
-            link: string;
-        }[];
-        items: {
-            name: string;
-            link: string;
-        }[];
-    };
+export type Location = {
+    name: string;
+    link: string;
+    quests: Quest[];
+    interactions: Interaction[];
+    items: Item[];
+};
+
+export const Location = ({
+    location,
+    regionName,
+    checkedBoxes,
+    onCheckboxChange,
+    getPercentage,
+    index,
+}: {
+    location: Location;
     regionName: string;
     checkedBoxes: Record<string, checkboxValues>;
     onCheckboxChange: (params: {
@@ -27,16 +35,7 @@ type LocationProps = {
         value: string
     ) => number | string;
     index: number;
-};
-
-export const Location = ({
-    location,
-    regionName,
-    checkedBoxes,
-    onCheckboxChange,
-    getPercentage,
-    index,
-}: LocationProps) => {
+}) => {
     const percentComplete = getPercentage("location", location.name);
 
     return (
@@ -65,6 +64,18 @@ export const Location = ({
                 {!!location.quests.length && (
                     <QuestList
                         quests={location.quests}
+                        regionName={regionName}
+                        locationName={location.name}
+                        checkedBoxes={checkedBoxes}
+                        onCheckboxChange={(name, values) =>
+                            onCheckboxChange({ name, values })
+                        }
+                    />
+                )}
+
+                {!!location.interactions.length && (
+                    <InteractionList
+                        interactions={location.interactions}
                         regionName={regionName}
                         locationName={location.name}
                         checkedBoxes={checkedBoxes}

@@ -2,22 +2,16 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { Location } from "./Location";
 import { checkboxValues } from "../page";
 
-type RegionProps = {
+export const Region = ({
+    region,
+    checkedBoxes,
+    onCheckboxChange,
+    getPercentage,
+}: {
     region: {
         name: string;
         link: string;
-        locations: {
-            name: string;
-            link: string;
-            quests: {
-                name: string;
-                link: string;
-            }[];
-            items: {
-                name: string;
-                link: string;
-            }[];
-        }[];
+        locations: Location[];
     };
     checkedBoxes: Record<string, checkboxValues>;
     onCheckboxChange: (params: {
@@ -28,14 +22,7 @@ type RegionProps = {
         slug: keyof checkboxValues,
         value: string
     ) => number | string;
-};
-
-export const Region = ({
-    region,
-    checkedBoxes,
-    onCheckboxChange,
-    getPercentage,
-}: RegionProps) => {
+}) => {
     const percentComplete = getPercentage("region", region.name);
 
     return (

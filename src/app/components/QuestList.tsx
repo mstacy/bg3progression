@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { checkboxValues } from "../page";
 
-type quest = {
+export type Quest = {
     name: string;
     link: string;
 };
@@ -13,7 +13,7 @@ export const QuestList = ({
     checkedBoxes,
     onCheckboxChange,
 }: {
-    quests: quest[];
+    quests: Quest[];
     regionName: string;
     locationName: string;
     checkedBoxes: Record<string, checkboxValues>;
@@ -23,7 +23,7 @@ export const QuestList = ({
         <>
             <h4>Quests</h4>
             <div className="flex flex-col">
-                {quests.map((quest: quest) => {
+                {quests.map((quest: Quest) => {
                     if (!checkedBoxes[quest.name]) {
                         checkedBoxes[quest.name] = {
                             isChecked: false,
@@ -51,21 +51,3 @@ export const QuestList = ({
         </>
     );
 };
-
-// In the buildLocation function, replace the buildQuests call with:
-// {!!location.quests.length && (
-//     <div className="flex flex-col">
-//         <h4>Quests</h4>
-//         <QuestList
-//             quests={location.quests}
-//             regionName={regionName}
-//             locationName={location.name}
-//             checkedBoxes={checkedBoxes}
-//             onCheckboxChange={(name, values) =>
-//                 handleChange({ name, values })
-//             }
-//         />
-//     </div>
-// )}
-
-// Remove the original buildQuests function

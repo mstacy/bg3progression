@@ -1,19 +1,19 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { checkboxValues } from "../page";
 
-export type Item = {
+export type Interaction = {
     name: string;
     link: string;
 };
 
-export const ItemList = ({
-    items,
+export const InteractionList = ({
+    interactions,
     regionName,
     locationName,
     checkedBoxes,
     onCheckboxChange,
 }: {
-    items: Item[];
+    interactions: Interaction[];
     regionName: string;
     locationName: string;
     checkedBoxes: Record<string, checkboxValues>;
@@ -21,11 +21,11 @@ export const ItemList = ({
 }) => {
     return (
         <>
-            <h4>Items</h4>
+            <h4>interactions</h4>
             <div className="flex flex-col">
-                {items.map((item) => {
-                    if (!checkedBoxes[item.name]) {
-                        checkedBoxes[item.name] = {
+                {interactions.map((interaction: Interaction) => {
+                    if (!checkedBoxes[interaction.name]) {
+                        checkedBoxes[interaction.name] = {
                             isChecked: false,
                             region: regionName,
                             location: locationName,
@@ -33,17 +33,17 @@ export const ItemList = ({
                     }
                     return (
                         <FormControlLabel
-                            label={item.name}
+                            label={interaction.name}
                             control={<Checkbox />}
-                            key={item.name}
+                            key={interaction.name}
                             onChange={(e, checked) => {
-                                onCheckboxChange(item.name, {
+                                onCheckboxChange(interaction.name, {
                                     isChecked: checked,
                                     region: regionName,
                                     location: locationName,
                                 });
                             }}
-                            checked={checkedBoxes[item.name].isChecked}
+                            checked={checkedBoxes[interaction.name].isChecked}
                         />
                     );
                 })}
