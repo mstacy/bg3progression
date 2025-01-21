@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel } from "@mui/material";
+import { Button, Checkbox, FormControlLabel } from "@mui/material";
 import { checkboxValues } from "../page";
 
 export type Item = {
@@ -32,19 +32,25 @@ export const ItemList = ({
                         };
                     }
                     return (
-                        <FormControlLabel
-                            label={item.name}
-                            control={<Checkbox />}
-                            key={item.name}
-                            onChange={(e, checked) => {
-                                onCheckboxChange(item.name, {
-                                    isChecked: checked,
-                                    region: regionName,
-                                    location: locationName,
-                                });
-                            }}
-                            checked={checkedBoxes[item.name].isChecked}
-                        />
+                        <div key={item.name} className="flex justify-between">
+                            <FormControlLabel
+                                label={item.name}
+                                control={<Checkbox />}
+                                key={item.name}
+                                onChange={(e, checked) => {
+                                    onCheckboxChange(item.name, {
+                                        isChecked: checked,
+                                        region: regionName,
+                                        location: locationName,
+                                    });
+                                }}
+                                checked={checkedBoxes[item.name].isChecked}
+                            />
+
+                            <Button href={item.link} target="_blank">
+                                View
+                            </Button>
+                        </div>
                     );
                 })}
             </div>

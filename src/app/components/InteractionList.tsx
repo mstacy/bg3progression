@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel } from "@mui/material";
+import { Button, Checkbox, FormControlLabel } from "@mui/material";
 import { checkboxValues } from "../page";
 
 export type Interaction = {
@@ -21,7 +21,7 @@ export const InteractionList = ({
 }) => {
     return (
         <>
-            <h4>interactions</h4>
+            <h4>Interactions</h4>
             <div className="flex flex-col">
                 {interactions.map((interaction: Interaction) => {
                     if (!checkedBoxes[interaction.name]) {
@@ -32,19 +32,29 @@ export const InteractionList = ({
                         };
                     }
                     return (
-                        <FormControlLabel
-                            label={interaction.name}
-                            control={<Checkbox />}
+                        <div
                             key={interaction.name}
-                            onChange={(e, checked) => {
-                                onCheckboxChange(interaction.name, {
-                                    isChecked: checked,
-                                    region: regionName,
-                                    location: locationName,
-                                });
-                            }}
-                            checked={checkedBoxes[interaction.name].isChecked}
-                        />
+                            className="flex justify-between"
+                        >
+                            <FormControlLabel
+                                label={interaction.name}
+                                control={<Checkbox />}
+                                onChange={(e, checked) => {
+                                    onCheckboxChange(interaction.name, {
+                                        isChecked: checked,
+                                        region: regionName,
+                                        location: locationName,
+                                    });
+                                }}
+                                checked={
+                                    checkedBoxes[interaction.name].isChecked
+                                }
+                            />
+
+                            <Button href={interaction.link} target="_blank">
+                                View
+                            </Button>
+                        </div>
                     );
                 })}
             </div>
