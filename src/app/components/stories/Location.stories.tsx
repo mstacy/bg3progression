@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Location } from "../Location";
 import { checkboxValues } from "../../page";
 
-const meta: Meta<typeof Location> = {
+const meta = {
     component: Location,
     title: "Components/Location",
-};
+} satisfies Meta<typeof Location>;
 
 export default meta;
-type Story = StoryObj<typeof Location>;
+type Story = StoryObj<typeof meta>;
 
 const mockData = {
     location: {
@@ -20,6 +20,7 @@ const mockData = {
                 link: "https://bg3.wiki/wiki/Find_a_Cure",
             },
         ],
+        interactions: [],
         items: [
             {
                 name: "Gloves of Power",
