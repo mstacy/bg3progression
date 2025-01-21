@@ -277,47 +277,7 @@
                         }
                     ]
                 },
-                {
-                    "name": "Forest",
-                    "link": "https://bg3.wiki/wiki/Forest",
-                    "quests": [],
-                    "interactions": [
-                        {
-                            "name": "Owlbear Nest",
-                            "link": "https://bg3.wiki/wiki/Owlbear_Nest"
-                        },
-                        {
-                            "name": "",
-                            "link": ""
-                        },
-                        {
-                            "name": "",
-                            "link": ""
-                        }
-                    ],
-                    "items": [
-                        {
-                            "name": "",
-                            "link": ""
-                        },
-                        {
-                            "name": "",
-                            "link": ""
-                        },
-                        {
-                            "name": "",
-                            "link": ""
-                        },
-                        {
-                            "name": "",
-                            "link": ""
-                        },
-                        {
-                            "name": "",
-                            "link": ""
-                        }
-                    ]
-                },
+
                 {
                     "name": "Blighted Village",
                     "link": "https://bg3.wiki/wiki/Blighted_Village",
@@ -351,68 +311,73 @@
                         {
                             "name": "Whispering Depths",
                             "link": "https://bg3.wiki/wiki/Whispering_Depths"
-                        },
-                        {
-                            "name": "",
-                            "link": ""
                         }
                     ],
                     "items": [
                         {
-                            "name": "",
-                            "link": ""
-                        },
-                        {
                             "name": "Head of a Broken Spear",
-                            "link": "https://bg3.wiki/wiki/Head_of_a_Broken_Spear"
+                            "link": "https://bg3.wiki/wiki/Head_of_a_Broken_Spear",
+                            "rarity": "common"
                         },
                         {
                             "name": "Shaft of a Broken Spear",
-                            "link": "https://bg3.wiki/wiki/Shaft_of_a_Broken_Spear"
+                            "link": "https://bg3.wiki/wiki/Shaft_of_a_Broken_Spear",
+                            "rarity": "common"
                         },
                         {
                             "name": "Fleetfingers",
-                            "link": "https://bg3.wiki/wiki/Fleetfingers"
+                            "link": "https://bg3.wiki/wiki/Fleetfingers",
+                            "rarity": "uncommon"
                         },
                         {
                             "name": "Moondrop Pendant",
-                            "link": "https://bg3.wiki/wiki/Moondrop_Pendant"
+                            "link": "https://bg3.wiki/wiki/Moondrop_Pendant",
+                            "rarity": "uncommon"
                         },
                         {
                             "name": "Owlbear Egg",
-                            "link": "https://bg3.wiki/wiki/Owlbear_Egg"
+                            "link": "https://bg3.wiki/wiki/Owlbear_Egg",
+                            "rarity": "common"
                         },
                         {
                             "name": "The Oak Father's Embrace",
-                            "link": "https://bg3.wiki/wiki/The_Oak_Father%27s_Embrace"
+                            "link": "https://bg3.wiki/wiki/The_Oak_Father%27s_Embrace",
+                            "rarity": "uncommon"
                         },
                         {
                             "name": "Dark Amethyst",
-                            "link": "https://bg3.wiki/wiki/Dark_Amethyst"
+                            "link": "https://bg3.wiki/wiki/Dark_Amethyst",
+                            "rarity": "story"
                         },
                         {
                             "name": "Poisoner's Robe",
-                            "link": "https://bg3.wiki/wiki/Poisoner%27s_Robe"
+                            "link": "https://bg3.wiki/wiki/Poisoner%27s_Robe",
+                            "rarity": "uncommon"
                         },
                         {
                             "name": "Spiderstep Boots",
-                            "link": "https://bg3.wiki/wiki/Spiderstep_Boots"
+                            "link": "https://bg3.wiki/wiki/Spiderstep_Boots",
+                            "rarity": "uncommon"
                         },
                         {
                             "name": "Spurred Band",
-                            "link": "https://bg3.wiki/wiki/Spurred_Band"
+                            "link": "https://bg3.wiki/wiki/Spurred_Band",
+                            "rarity": "uncommon"
                         },
                         {
                             "name": "Bracers of Defence",
-                            "link": "https://bg3.wiki/wiki/Bracers_of_Defence"
+                            "link": "https://bg3.wiki/wiki/Bracers_of_Defence",
+                            "rarity": "uncommon"
                         },
                         {
                             "name": "Necromancy of Thay",
-                            "link": "https://bg3.wiki/wiki/Necromancy_of_Thay"
+                            "link": "https://bg3.wiki/wiki/Necromancy_of_Thay",
+                            "rarity": "story"
                         },
                         {
                             "name": "Scroll of Summon Quasit",
-                            "link": "https://bg3.wiki/wiki/Scroll_of_Summon_Quasit"
+                            "link": "https://bg3.wiki/wiki/Scroll_of_Summon_Quasit",
+                            "rarity": "common"
                         },
                         {
                             "name": "Haste Helm",
@@ -456,8 +421,176 @@
                         },
                         {
                             "name": "Infernal Iron",
-                            "link": "https://bg3.wiki/wiki/Infernal_Iron"
+                            "link": "https://bg3.wiki/wiki/Infernal_Iron",
+                            "rarity": "common"
                         }
+                    ]
+                },
+                {
+                    "name": "The Risen Road",
+                    "link": "https://bg3.wiki/wiki/The_Risen_Road",
+                    "quests": [],
+                    "interactions": [
+                        {
+                            "name": "Find the Missing Shipment",
+                            "link": "https://bg3.wiki/wiki/Find_the_Missing_Shipment"
+                        },
+                        {
+                            "name": "Hunt the Devil",
+                            "link": "https://bg3.wiki/wiki/Hunt_the_Devil"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "name": "Gloves of Heroism",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Heroism",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Reason's Grasp",
+                            "link": "https://bg3.wiki/wiki/Reason%27s_Grasp",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Shattered Flail",
+                            "link": "https://bg3.wiki/wiki/Shattered_Flail",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Smuggler's Ring",
+                            "link": "https://bg3.wiki/wiki/Smuggler%27s_Ring",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Speedy Reply",
+                            "link": "https://bg3.wiki/wiki/Speedy_Reply",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Sword of Justice",
+                            "link": "https://bg3.wiki/wiki/Sword_of_Justice",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                },
+                {
+                    "name": "Waukeen's Rest",
+                    "link": "https://bg3.wiki/wiki/Waukeen%27s_Rest",
+                    "quests": [
+                        {
+                            "name": "Rescue the Grand Duke",
+                            "link": "https://bg3.wiki/wiki/Rescue_the_Grand_Duke"
+                        },
+                        {
+                            "name": "Rescue the Trapped Man",
+                            "link": "https://bg3.wiki/wiki/Rescue_the_Trapped_Man"
+                        },
+                    ],
+                    "interactions": [
+\
+                    ],
+                    "items": [
+                        {
+                            "name": "Hamarhraft",
+                            "link": "https://bg3.wiki/wiki/Hamarhraft",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Svartlebee's Woundseeker",
+                            "link": "https://bg3.wiki/wiki/Svartlebee%27s_Woundseeker",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "The Joltshooter",
+                            "link": "https://bg3.wiki/wiki/The_Joltshooter",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "The Sparky Points",
+                            "link": "https://bg3.wiki/wiki/The_Sparky_Points",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "The Spellsparkler",
+                            "link": "https://bg3.wiki/wiki/The_Spellsparkler",
+                            "rarity": "rare"
+                        },
+                    ]
+                },
+                {
+                    "name": "Zhentarim Basement",
+                    "link": "https://bg3.wiki/wiki/Zhentarim_Basement",
+                    "quests": [
+                        {
+                            "name": "Free the Artist",
+                            "link": "https://bg3.wiki/wiki/Free_the_Artist"
+                        }
+                    ],
+                    "interactions": [
+\
+                    ],
+                    "items": [
+                        {
+                            "name": "Abyss Beckoners",
+                            "link": "https://bg3.wiki/wiki/Abyss_Beckoners"
+                        },
+                        {
+                            "name": "Harold",
+                            "link": "https://bg3.wiki/wiki/Harold",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Infernal Iron",
+                            "link": "https://bg3.wiki/wiki/Infernal_Iron",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Giantbreaker",
+                            "link": "https://bg3.wiki/wiki/Giantbreaker",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Gloves of Hail of Thorns",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Hail_of_Thorns",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Gloves_of_Thievery",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Thievery",
+                            "rarity": "uncommon"
+                        },
+
+                        {
+                            "name": "Rupturing_Blade",
+                            "link": "https://bg3.wiki/wiki/Rupturing_Blade",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "The_Jolty_Vest",
+                            "link": "https://bg3.wiki/wiki/The_Jolty_Vest",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Titanstring Bow",
+                            "link": "https://bg3.wiki/wiki/Titanstring_Bow",
+                            "rarity": "rare"
+                        }
+                    ]
+                },
+                {
+                "name": "Zhentarim Basement",
+                    "link": "https://bg3.wiki/wiki/Zhentarim_Basement",
+                    "quests": [
+                        {
+                            "name": "Free the Artist",
+                            "link": "https://bg3.wiki/wiki/Free_the_Artist"
+                        }
+                    ],
+                    "interactions": [
+\
+                    ],
+                    "items": [
+
                     ]
                 }
             ]
