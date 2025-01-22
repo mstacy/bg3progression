@@ -479,7 +479,8 @@
                             "link": "https://bg3.wiki/wiki/Sword_of_Justice",
                             "rarity": "uncommon"
                         }
-                    ]
+                    ],
+                    "companions": ["Karlach"]
                 },
                 {
                     "name": "Waukeen's Rest",
@@ -627,7 +628,8 @@
                             "link": "https://bg3.wiki/wiki/Wood_Woad_Shield",
                             "rarity": "uncommon"
                         }
-                    ]
+                    ],
+                    "companions": ["Astarion"]
                 },
                 {
                     "name": "Goblin Camp",
@@ -702,6 +704,25 @@
                             "rarity": "uncommon"
                         }
                     ]
+                },
+                {
+                    "name": "Mountain Pass",
+                    "link": "https://bg3.wiki/wiki/Mountain_Pass",
+                    "quests": [],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Elaborate Slate",
+                            "link": "https://bg3.wiki/wiki/Elaborate_Slate",
+                            "rarity": "story"
+                        },
+                        {
+                            "name": "Silver Sword of the Astral Plane",
+                            "link": "https://bg3.wiki/wiki/Silver_Sword_of_the_Astral_Plane",
+                            "rarity": "legendary"
+                        }
+                    ],
+                    "companions": ["Lae'zel"]
                 }
             ]
         },
@@ -1080,16 +1101,15 @@
                     ]
                 },
                 {
-                    "location": {
-                        "name": "Rosymorn Monastery",
-                        "link": "https://bg3.wiki/wiki/Rosymorn_Monastery"
-                    },
+                    "name": "Rosymorn Monastery",
+                    "link": "https://bg3.wiki/wiki/Rosymorn_Monastery",
                     "quests": [
                         {
                             "name": "Find the Blood of Lathander",
                             "link": "https://bg3.wiki/wiki/Find_the_Blood_of_Lathander"
                         }
                     ],
+                    "interactions": [],
                     "items": [
                         {
                             "name": "Ceremonial Battleaxe",
@@ -1119,6 +1139,162 @@
                         {
                             "name": "Holy Lance Helm",
                             "link": "https://bg3.wiki/wiki/Holy_Lance_Helm",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                },
+                {
+                    "name": "Crèche Y'llek",
+                    "link": "https://bg3.wiki/wiki/Cr%C3%A8che_Y'llek",
+                    "quests": [],
+                    "interactions": [
+                        {
+                            "name": "Ghustil Stornugoss",
+                            "link": "https://bg3.wiki/wiki/Stornugoss"
+                        },
+                        {
+                            "name": "Sa'varsh Kethk",
+                            "link": "https://bg3.wiki/wiki/Kethk"
+                        },
+                        {
+                            "name": "Varsh Ko'kuu",
+                            "link": "https://bg3.wiki/wiki/Ko%27kuu"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "name": "Aberration Hunters' Amulet",
+                            "link": "https://bg3.wiki/wiki/Aberration_Hunters%27_Amulet",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Amulet of Branding",
+                            "link": "https://bg3.wiki/wiki/Amulet_of_Branding",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Arrow of Aberration Slaying",
+                            "link": "https://bg3.wiki/wiki/Arrow_of_Aberration_Slaying",
+                            "rarity": "very rare"
+                        },
+                        {
+                            "name": "Circlet of Psionic Revenge",
+                            "link": "https://bg3.wiki/wiki/Circlet_of_Psionic_Revenge",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Crossbow of Arcane Force",
+                            "link": "https://bg3.wiki/wiki/Crossbow_of_Arcane_Force",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Daredevil Gloves",
+                            "link": "https://bg3.wiki/wiki/Daredevil_Gloves",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Defender Flail",
+                            "link": "https://bg3.wiki/wiki/Defender_Flail",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Diadem of Arcane Synergy",
+                            "link": "https://bg3.wiki/wiki/Diadem_of_Arcane_Synergy",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Githyanki Egg",
+                            "link": "https://bg3.wiki/wiki/Githyanki_Egg",
+                            "rarity": "story"
+                        },
+                        {
+                            "name": "Gloves of Belligerent Skies",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Belligerent_Skies",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Gloves of Dexterity",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Dexterity",
+                            "rarity": "very rare"
+                        },
+                        {
+                            "name": "Hoarfrost Boots",
+                            "link": "https://bg3.wiki/wiki/Hoarfrost_Boots",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Knife of the Undermountain King",
+                            "link": "https://bg3.wiki/wiki/Knife_of_the_Undermountain_King",
+                            "rarity": "very rare"
+                        },
+                        {
+                            "name": "Larethian's Wrath",
+                            "link": "https://bg3.wiki/wiki/Larethian%27s_Wrath",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Mind Flayer Parasite Specimen x 3",
+                            "link": "https://bg3.wiki/wiki/Mind_Flayer_Parasite_Specimen",
+                            "rarity": "story"
+                        },
+                        {
+                            "name": "Necklace of Elemental Augmentation",
+                            "link": "https://bg3.wiki/wiki/Necklace_of_Elemental_Augmentation",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Potion of Angelic Slumber",
+                            "link": "https://bg3.wiki/wiki/Potion_of_Angelic_Slumber",
+                            "rarity": "very rare"
+                        },
+                        {
+                            "name": "Ring of Arcane Synergy",
+                            "link": "https://bg3.wiki/wiki/Ring_of_Arcane_Synergy",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Ring of Elemental Infusion",
+                            "link": "https://bg3.wiki/wiki/Ring_of_Elemental_Infusion",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Soulbreaker Greatsword",
+                            "link": "https://bg3.wiki/wiki/Soulbreaker_Greatsword",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Strange Conduit Ring",
+                            "link": "https://bg3.wiki/wiki/Strange_Conduit_Ring",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "The Blood of Lathander",
+                            "link": "https://bg3.wiki/wiki/The_Blood_of_Lathander",
+                            "rarity": "legendary"
+                        },
+                        {
+                            "name": "The Skinburster",
+                            "link": "https://bg3.wiki/wiki/The_Skinburster",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Unseen Menace",
+                            "link": "https://bg3.wiki/wiki/Unseen_Menace",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Varsh Ko'kuu's Boots",
+                            "link": "https://bg3.wiki/wiki/Varsh_Ko%27kuu%27s_Boots",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Vital Conduit Boots",
+                            "link": "https://bg3.wiki/wiki/Vital_Conduit_Boots",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Witchbreaker",
+                            "link": "https://bg3.wiki/wiki/Witchbreaker",
                             "rarity": "uncommon"
                         }
                     ]
