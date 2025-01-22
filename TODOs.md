@@ -1,11 +1,8 @@
-1. add bounce to localstorage save
-2. Interactions - events that don't have a quest though a good conversation - started
-3. Suggested companions
-4. single quest rewards - sussur
-5. check/uncheck all on accordions
-6. clear all on top to reset
-
-mountain pass
+1. Suggested companions
+2. single quest rewards - sussur
+3. check/uncheck all on accordions
+4. clear all on top to reset
+5. download and upload
 
 when does https://bg3.wiki/wiki/Discover_the_Artefact%27s_Secrets start
 

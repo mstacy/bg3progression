@@ -582,55 +582,7 @@
                         }
                     ]
                 },
-                {
-                    "name": "Sunlit Whetlands",
-                    "link": "https://bg3.wiki/wiki/Sunlit_Wetlands",
-                    "quests": [
-                        {
-                            "name": "Save Mayrina",
-                            "link": "https://bg3.wiki/wiki/Save_Mayrina"
-                        }
-                    ],
-                    "interactions": [
-                        {
-                            "name": "Gandrel",
-                            "link": "https://bg3.wiki/wiki/Gandrel"
-                        }
-                    ],
-                    "items": [
-                        {
-                            "name": "Auntie Ethel's Hair",
-                            "link": "https://bg3.wiki/wiki/Auntie_Ethel%27s_Hair",
-                            "rarity": "common"
-                        },
-                        {
-                            "name": "Letter to Kagha",
-                            "link": "https://bg3.wiki/wiki/Letter_to_Kagha",
-                            "rarity": "story"
-                        },
-                        {
-                            "name": "Second Marriage",
-                            "link": "https://bg3.wiki/wiki/Second_Marriage",
-                            "rarity": "common"
-                        },
-                        {
-                            "name": "Staff of Crones",
-                            "link": "https://bg3.wiki/wiki/Staff_of_Crones",
-                            "rarity": "uncommon"
-                        },
-                        {
-                            "name": "The Sparkle Hands",
-                            "link": "https://bg3.wiki/wiki/The_Sparkle_Hands",
-                            "rarity": "rare"
-                        },
-                        {
-                            "name": "Wood Woad Shield",
-                            "link": "https://bg3.wiki/wiki/Wood_Woad_Shield",
-                            "rarity": "uncommon"
-                        }
-                    ],
-                    "companions": ["Astarion"]
-                },
+
                 {
                     "name": "Goblin Camp",
                     "link": "https://bg3.wiki/wiki/Goblin_Camp",
@@ -638,6 +590,10 @@
                         {
                             "name": "Ask the Goblin Priestess for Help",
                             "link": "https://bg3.wiki/wiki/Ask_the_Goblin_Priestess_for_Help"
+                        },
+                        {
+                            "name": "Discover the Artefact's Secrets",
+                            "link": "https://bg3.wiki/wiki/Discover_the_Artefact%27s_Secrets"
                         }
                     ],
                     "interactions": [
@@ -704,6 +660,55 @@
                             "rarity": "uncommon"
                         }
                     ]
+                },
+                {
+                    "name": "Sunlit Whetlands",
+                    "link": "https://bg3.wiki/wiki/Sunlit_Wetlands",
+                    "quests": [
+                        {
+                            "name": "Save Mayrina",
+                            "link": "https://bg3.wiki/wiki/Save_Mayrina"
+                        }
+                    ],
+                    "interactions": [
+                        {
+                            "name": "Gandrel",
+                            "link": "https://bg3.wiki/wiki/Gandrel"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "name": "Auntie Ethel's Hair",
+                            "link": "https://bg3.wiki/wiki/Auntie_Ethel%27s_Hair",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Letter to Kagha",
+                            "link": "https://bg3.wiki/wiki/Letter_to_Kagha",
+                            "rarity": "story"
+                        },
+                        {
+                            "name": "Second Marriage",
+                            "link": "https://bg3.wiki/wiki/Second_Marriage",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Staff of Crones",
+                            "link": "https://bg3.wiki/wiki/Staff_of_Crones",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "The Sparkle Hands",
+                            "link": "https://bg3.wiki/wiki/The_Sparkle_Hands",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Wood Woad Shield",
+                            "link": "https://bg3.wiki/wiki/Wood_Woad_Shield",
+                            "rarity": "uncommon"
+                        }
+                    ],
+                    "companions": ["Astarion"]
                 },
                 {
                     "name": "Mountain Pass",
