@@ -126,27 +126,27 @@
                     ],
                     "interactions": [
                         {
-                            "name": "Alfira - Performing together",
+                            "name": "Alfira",
                             "link": "https://bg3.wiki/wiki/Alfira#Performing_together"
                         },
                         {
-                            "name": "Barth - Return the Locket",
+                            "name": "Barth",
                             "link": "https://bg3.wiki/wiki/Return_the_Locket"
                         },
                         {
-                            "name": "Findal - Save?",
+                            "name": "Findal",
                             "link": "https://bg3.wiki/wiki/Findal"
                         },
                         {
-                            "name": "Nadira - Bugbear Assassin",
+                            "name": "Nadira",
                             "link": "https://bg3.wiki/wiki/Nadira#Act_One"
                         },
                         {
-                            "name": "Strange Ox - Chat",
+                            "name": "Strange Ox",
                             "link": "https://bg3.wiki/wiki/Strange_Ox"
                         },
                         {
-                            "name": "Volo - Chat",
+                            "name": "Volo",
                             "link": "https://bg3.wiki/wiki/Volo#Act_One"
                         }
                     ],
@@ -590,7 +590,12 @@
                             "link": "https://bg3.wiki/wiki/Save_Mayrina"
                         }
                     ],
-                    "interactions": [],
+                    "interactions": [
+                        {
+                            "name": "Gandrel",
+                            "link": "https://bg3.wiki/wiki/Gandrel"
+                        }
+                    ],
                     "items": [
                         {
                             "name": "Auntie Ethel's Hair",
@@ -703,12 +708,423 @@
         {
             "name": "Underdark",
             "link": "https://bg3.wiki/wiki/Underdark",
-            "locations": []
+            "locations": [
+                {
+                    "name": "Selûnite Outpost",
+                    "link": "https://bg3.wiki/wiki/Sel%C3%BBnite_Outpost",
+                    "quests": [],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Helmet of Smiting",
+                            "link": "https://bg3.wiki/wiki/Helmet_of_Smiting",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Icy Helve",
+                            "link": "https://bg3.wiki/wiki/Icy_Helve",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Luminous Armour",
+                            "link": "https://bg3.wiki/wiki/Luminous_Armour",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Phalar Aluve",
+                            "link": "https://bg3.wiki/wiki/Phalar_Aluve",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "The Spectator Eyes",
+                            "link": "https://bg3.wiki/wiki/The_Spectator_Eyes",
+                            "rarity": "very rare"
+                        }
+                    ]
+                },
+                {
+                    "name": "Storehouse",
+                    "link": "https://bg3.wiki/wiki/Storehouse",
+                    "quests": [],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Amulet of the Unworthy",
+                            "link": "https://bg3.wiki/wiki/Amulet_of_the_Unworthy",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ebonlake Grotto",
+                    "link": "https://bg3.wiki/wiki/Ebonlake_Grotto",
+                    "quests": [
+                        {
+                            "name": "Avenge Glut's Circle",
+                            "link": "https://bg3.wiki/wiki/Avenge_Glut%27s_Circle"
+                        },
+                        {
+                            "name": "Cure the Poisoned Gnome",
+                            "link": "https://bg3.wiki/wiki/Cure_the_Poisoned_Gnome"
+                        },
+                        {
+                            "name": "Defeat the Duergar Intruders",
+                            "link": "https://bg3.wiki/wiki/Defeat_the_Duergar_Intruders"
+                        },
+                        {
+                            "name": "Deliver Nere's Head",
+                            "link": "https://bg3.wiki/wiki/Deliver_Nere%27s_Head"
+                        },
+                        {
+                            "name": "Find the Mushroom Picker",
+                            "link": "https://bg3.wiki/wiki/Find_the_Mushroom_Picker"
+                        }
+                    ],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Amulet of Restoration",
+                            "link": "https://bg3.wiki/wiki/Amulet_of_Restoration",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Boots of Speed",
+                            "link": "https://bg3.wiki/wiki/Boots_of_Speed",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Boots of Stormy Clamour",
+                            "link": "https://bg3.wiki/wiki/Boots_of_Stormy_Clamour",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Caustic Band",
+                            "link": "https://bg3.wiki/wiki/Caustic_Band",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Champion's Chain",
+                            "link": "https://bg3.wiki/wiki/Champion%27s_Chain",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Corrosive Flail",
+                            "link": "https://bg3.wiki/wiki/Corrosive_Flail",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Creation's Echo",
+                            "link": "https://bg3.wiki/wiki/Creation%27s_Echo",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Envoy's Amulet",
+                            "link": "https://bg3.wiki/wiki/Envoy%27s_Amulet",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Gloves of Hail of Thorns",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Hail_of_Thorns",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Herbalist's Gloves",
+                            "link": "https://bg3.wiki/wiki/Herbalist%27s_Gloves",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Pearl of Power Amulet",
+                            "link": "https://bg3.wiki/wiki/Pearl_of_Power_Amulet",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Ring of Jumping",
+                            "link": "https://bg3.wiki/wiki/Ring_of_Jumping",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Ring of Mind Shielding",
+                            "link": "https://bg3.wiki/wiki/Ring_of_Mind-Shielding",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Ring of Salving",
+                            "link": "https://bg3.wiki/wiki/Ring_of_Salving",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Shadow of Menzoberranzan",
+                            "link": "https://bg3.wiki/wiki/Shadow_of_Menzoberranzan",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Winter's Clutches",
+                            "link": "https://bg3.wiki/wiki/Winter%27s_Clutches",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                },
+                {
+                    "name": "Dread Hollow",
+                    "link": "https://bg3.wiki/wiki/Dread_Hollow",
+                    "quests": [],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Dog Collar",
+                            "link": "https://bg3.wiki/wiki/Dog_Collar",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Explorer's Ring",
+                            "link": "https://bg3.wiki/wiki/Explorer%27s_Ring",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Icy Crystal",
+                            "link": "https://bg3.wiki/wiki/Icy_Crystal",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Noblestalk",
+                            "link": "https://bg3.wiki/wiki/Noblestalk",
+                            "rarity": "story"
+                        },
+                        {
+                            "name": "Sussur Tree Bark",
+                            "link": "https://bg3.wiki/wiki/Sussur_Tree_Bark",
+                            "rarity": "story"
+                        }
+                    ]
+                },
+                {
+                    "name": "Decrepit Village",
+                    "link": "https://bg3.wiki/wiki/Decrepit_Village",
+                    "quests": [
+                        {
+                            "name": "Find the Missing Boots",
+                            "link": "https://bg3.wiki/wiki/Find_the_Missing_Boots"
+                        }
+                    ],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Duergar Antidote",
+                            "link": "https://bg3.wiki/wiki/Duergar_Antidote",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Exterminator's Axe",
+                            "link": "https://bg3.wiki/wiki/Exterminator%27s_Axe",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Shortsword of First Blood",
+                            "link": "https://bg3.wiki/wiki/Shortsword_of_First_Blood",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                },
+                {
+                    "name": "The Festering Cove",
+                    "link": "https://bg3.wiki/wiki/The_Festering_Cove",
+                    "quests": [],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Arrow of Arcane Interference",
+                            "link": "https://bg3.wiki/wiki/Arrow_of_Arcane_Interference",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Arrow of Dragon Slaying",
+                            "link": "https://bg3.wiki/wiki/Arrow_of_Dragon_Slaying",
+                            "rarity": "very rare"
+                        },
+                        {
+                            "name": "Sickle of BOOOAL",
+                            "link": "https://bg3.wiki/wiki/Sickle_of_BOOOAL",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Slippery Chain Shirt",
+                            "link": "https://bg3.wiki/wiki/Slippery_Chain_Shirt",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                },
+                {
+                    "name": "Arcane Tower",
+                    "link": "https://bg3.wiki/wiki/Arcane_Tower",
+                    "quests": [],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Chest of the Mundane",
+                            "link": "https://bg3.wiki/wiki/Chest_of_the_Mundane",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Club of Hill Giant Strength",
+                            "link": "https://bg3.wiki/wiki/Club_of_Hill_Giant_Strength",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Guiding Light",
+                            "link": "https://bg3.wiki/wiki/Guiding_Light",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Mage's Friend",
+                            "link": "https://bg3.wiki/wiki/Mage%27s_Friend",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Mystra's Grace",
+                            "link": "https://bg3.wiki/wiki/Mystra%27s_Grace",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Skybreaker",
+                            "link": "https://bg3.wiki/wiki/Skybreaker",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Sparks Wall",
+                            "link": "https://bg3.wiki/wiki/Sparks_Wall",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Staff of Arcane Blessing",
+                            "link": "https://bg3.wiki/wiki/Staff_of_Arcane_Blessing",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Sussur Bloom",
+                            "link": "https://bg3.wiki/wiki/Sussur_Bloom",
+                            "rarity": "story"
+                        },
+                        {
+                            "name": "Uncovered Mysteries",
+                            "link": "https://bg3.wiki/wiki/Uncovered_Mysteries",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "name": "Rosymorn Monastery Trail",
+            "name": "Githyanki Creche",
             "link": "https://bg3.wiki/wiki/Rosymorn_Monastery_Trail",
-            "locations": []
+            "locations": [
+                {
+                    "name": "Trielta Crags",
+                    "link": "https://bg3.wiki/wiki/Rosymorn_Monastery_Trail",
+                    "quests": [
+                        {
+                            "name": "Steal a Githyanki Egg",
+                            "link": "https://bg3.wiki/wiki/Steal_a_Githyanki_Egg"
+                        },
+                        {
+                            "name": "Reclaim the Blue Jay's Nest",
+                            "link": "https://bg3.wiki/wiki/Reclaim_the_Blue_Jay%27s_Nest"
+                        }
+                    ],
+                    "interactions": [],
+                    "items": [
+                        {
+                            "name": "Arrow of Undead Slaying",
+                            "link": "https://bg3.wiki/wiki/Arrow_of_Undead_Slaying",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Boots of Elemental Momentum",
+                            "link": "https://bg3.wiki/wiki/Boots_of_Elemental_Momentum",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Cacophony",
+                            "link": "https://bg3.wiki/wiki/Cacophony",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Gloves of Baneful Striking",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Baneful_Striking",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Gloves of Cinder and Sizzle",
+                            "link": "https://bg3.wiki/wiki/Gloves_of_Cinder_and_Sizzle",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Hoppy",
+                            "link": "https://bg3.wiki/wiki/Hoppy",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Periapt of Wound Closure",
+                            "link": "https://bg3.wiki/wiki/Periapt_of_Wound_Closure",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "The Graceful Cloth",
+                            "link": "https://bg3.wiki/wiki/The_Graceful_Cloth",
+                            "rarity": "rare"
+                        },
+                        {
+                            "name": "Winter's Clutches",
+                            "link": "https://bg3.wiki/wiki/Winter's_Clutches",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                },
+                {
+                    "location": {
+                        "name": "Rosymorn Monastery",
+                        "link": "https://bg3.wiki/wiki/Rosymorn_Monastery"
+                    },
+                    "quests": [
+                        {
+                            "name": "Find the Blood of Lathander",
+                            "link": "https://bg3.wiki/wiki/Find_the_Blood_of_Lathander"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "name": "Ceremonial Battleaxe",
+                            "link": "https://bg3.wiki/wiki/Ceremonial_Battleaxe",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Ceremonial Longsword",
+                            "link": "https://bg3.wiki/wiki/Ceremonial_Longsword",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Ceremonial Mace",
+                            "link": "https://bg3.wiki/wiki/Ceremonial_Mace",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Ceremonial Warhammer",
+                            "link": "https://bg3.wiki/wiki/Ceremonial_Warhammer",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Dawnmaster's Crest",
+                            "link": "https://bg3.wiki/wiki/Dawnmaster%27s_Crest",
+                            "rarity": "common"
+                        },
+                        {
+                            "name": "Holy Lance Helm",
+                            "link": "https://bg3.wiki/wiki/Holy_Lance_Helm",
+                            "rarity": "uncommon"
+                        }
+                    ]
+                }
+            ],
+            "warning": "Travelling here will advance the story, which has consequences for many Act One quests, notably: Hunt the Devil, Rescue the Gnome, Rescue the Druid Halsin, Save the Goblin Sazza, Save the Refugees"
         }
     ]
 }

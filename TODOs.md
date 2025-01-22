@@ -3,10 +3,8 @@
 3. Suggested companions
 4. single quest rewards - sussur
 5. check/uncheck all on accordions
+6. clear all on top to reset
 
-    Volo - Grat - Goblin Camp?
-    {
-    "name": "The Whispering Promise",
-    "link": "https://bg3.wiki/wiki/The_Whispering_Promise",
-    "rarity": "uncommon"
-    },
+```
+using the bg3 wiki, give me a json object with name and link, a list of quests with name and link, and a list of items with name and link at Storehouse
+```
