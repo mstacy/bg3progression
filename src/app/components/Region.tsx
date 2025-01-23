@@ -12,6 +12,9 @@ export const Region = ({
     region,
     checkedBoxes,
     onCheckboxChange,
+    accordionsOpen,
+    onAccordionToggle,
+    searchTerm,
 }: {
     region: {
         name: string;
@@ -23,17 +26,26 @@ export const Region = ({
         name: string;
         values: checkboxValues;
     }) => void;
+    accordionsOpen: Record<string, boolean>;
+    onAccordionToggle: (accordionId: string) => void;
+    searchTerm: string;
 }) => {
     const percentComplete = getPercentage(checkedBoxes, "region", region.name);
+    const accordionId = `region-${region.name}`;
+    if (!accordionsOpen[accordionId]) {
+        accordionsOpen[accordionId] = false;
+    }
 
     return (
         <Accordion
             key={region.name}
             disableGutters
+            expanded={accordionsOpen[`region-${region.name}`] || !!searchTerm}
             slots={{
                 heading: "div",
             }}
             data-test={`region-accordion-${region.name}`}
+            onChange={() => onAccordionToggle(`region-${region.name}`)}
         >
             <AccordionSummary>
                 <div className="flex justify-between w-full items-center">
@@ -59,21 +71,18 @@ export const Region = ({
             </AccordionSummary>
 
             <AccordionDetails data-test={`region-details-${region.name}`}>
-                {region.locations.map(
-                    (
-                        location
-                        // index
-                    ) => (
-                        <Location
-                            key={location.name}
-                            location={location}
-                            regionName={region.name}
-                            checkedBoxes={checkedBoxes}
-                            onCheckboxChange={onCheckboxChange}
-                            // index={index}
-                        />
-                    )
-                )}
+                {region.locations.map((location) => (
+                    <Location
+                        key={location.name}
+                        location={location}
+                        regionName={region.name}
+                        checkedBoxes={checkedBoxes}
+                        onCheckboxChange={onCheckboxChange}
+                        accordionsOpen={accordionsOpen}
+                        onAccordionToggle={onAccordionToggle}
+                        searchTerm={searchTerm}
+                    />
+                ))}
             </AccordionDetails>
         </Accordion>
     );

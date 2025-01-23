@@ -26,8 +26,10 @@ export const Location = ({
     regionName,
     checkedBoxes,
     onCheckboxChange,
-}: // index,
-{
+    accordionsOpen,
+    onAccordionToggle,
+    searchTerm,
+}: {
     location: Location;
     regionName: string;
     checkedBoxes: Record<string, checkboxValues>;
@@ -35,7 +37,9 @@ export const Location = ({
         name: string;
         values: checkboxValues;
     }) => void;
-    // index: number;
+    accordionsOpen: Record<string, boolean>;
+    onAccordionToggle: (accordionId: string) => void;
+    searchTerm: string;
 }) => {
     const percentComplete = getPercentage(
         checkedBoxes,
@@ -43,11 +47,17 @@ export const Location = ({
         location.name
     );
 
+    const accordionId = `location-${regionName}-${location.name}`;
+    if (!accordionsOpen[accordionId]) {
+        accordionsOpen[accordionId] = false;
+    }
+
     return (
         <Accordion
             key={location.name}
             disableGutters
-            // defaultExpanded={index === 0}
+            expanded={accordionsOpen[accordionId] || !!searchTerm.length}
+            onChange={() => onAccordionToggle(accordionId)}
             slots={{
                 heading: "div",
             }}
