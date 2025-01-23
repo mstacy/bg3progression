@@ -6,7 +6,7 @@ export type Item = {
     link: string;
 };
 
-export const ItemList = ({
+const ItemList = ({
     items,
     regionName,
     locationName,
@@ -57,3 +57,5 @@ export const ItemList = ({
         </>
     );
 };
+
+export default ItemList;

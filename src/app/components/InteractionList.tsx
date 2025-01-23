@@ -6,7 +6,7 @@ export type Interaction = {
     link: string;
 };
 
-export const InteractionList = ({
+const InteractionList = ({
     interactions,
     regionName,
     locationName,
@@ -61,3 +61,5 @@ export const InteractionList = ({
         </>
     );
 };
+
+export default InteractionList;

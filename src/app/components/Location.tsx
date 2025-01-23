@@ -4,14 +4,15 @@ import {
     AccordionSummary,
     Button,
 } from "@mui/material";
-import { QuestList } from "./QuestList";
-import { InteractionList } from "./InteractionList";
-import { ItemList } from "./ItemList";
+// import { QuestList } from "./QuestList";
+// import { InteractionList } from "./InteractionList";
+// import { ItemList } from "./ItemList";
 import { checkboxValues } from "../page";
 import { Quest } from "./QuestList";
 import { Interaction } from "./InteractionList";
 import { Item } from "./ItemList";
 import { getPercentage } from "../utils";
+import dynamic from "next/dynamic";
 
 export type Location = {
     name: string;
@@ -21,6 +22,22 @@ export type Location = {
     items: Item[];
     companions?: string[];
 };
+
+// Lazy Loading Components
+const QuestList = dynamic(() => import("./QuestList"), {
+    loading: () => <p>Loading quests...</p>,
+    ssr: false,
+});
+
+const ItemList = dynamic(() => import("./ItemList"), {
+    loading: () => <p>Loading items...</p>,
+    ssr: false,
+});
+
+const InteractionList = dynamic(() => import("./InteractionList"), {
+    loading: () => <p>Loading interactions...</p>,
+    ssr: false,
+});
 
 export const Location = ({
     location,

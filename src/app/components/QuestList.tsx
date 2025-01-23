@@ -6,7 +6,7 @@ export type Quest = {
     link: string;
 };
 
-export const QuestList = ({
+const QuestList = ({
     quests,
     regionName,
     locationName,
@@ -56,3 +56,5 @@ export const QuestList = ({
         </>
     );
 };
+
+export default QuestList;
