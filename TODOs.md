@@ -11,3 +11,7 @@
 ```
 using the bg3 wiki, give me a json object with name and link, a list of quests with name and link, and a list of items with name and link at Storehouse
 ```
+
+# References
+
+-   https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/
