@@ -261,7 +261,8 @@
                             "link": "https://bg3.wiki/wiki/Wapira%27s_Crown",
                             "rarity": "uncommon"
                         }
-                    ]
+                    ],
+                    "companions": ["Lae'zel"]
                 },
                 {
                     "name": "Secluded Cove",
