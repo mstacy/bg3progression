@@ -12,14 +12,15 @@ export const Header = ({
     onSearch: (searchTerm: string) => void;
 }) => {
     const actCompletion = getPercentage(checkedBoxes, "region", "any");
-    console.log(checkedBoxes);
-    console.log(actCompletion);
 
     // Debounce the search callback
     const debouncedSearch = useCallback(
-        debounce((value: string) => {
-            onSearch(value);
-        }, 300),
+        (value: string) => {
+            const handler = debounce((searchValue: string) => {
+                onSearch(searchValue);
+            }, 300);
+            handler(value);
+        },
         [onSearch]
     );
 
