@@ -12,10 +12,7 @@ export const getPercentage = (
         (check: checkboxValues) => check[slug] === value
     );
     const checked = checks.filter((check) => check.isChecked);
-    console.log(value, checked.length, checks.length);
     if (!checked.length) return 0;
-
-    
 
     return ((checked.length / checks.length) * 100).toFixed(0);
 };
