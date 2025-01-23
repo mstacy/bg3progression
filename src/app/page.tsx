@@ -21,6 +21,7 @@ export default function Home() {
     const [accordionsOpen, setAccordionsOpen] = useState<
         Record<string, boolean>
     >({});
+    const [isLoading, setIsLoading] = useState(true);
 
     useLayoutEffect(() => {
         const savedCheckedBoxes = localStorage.getItem(checkedBoxesKey);
@@ -33,6 +34,8 @@ export default function Home() {
         const initialAccordionsOpen = JSON.parse(savedAccordionsOpen || "{}");
         if (Object.keys(initialAccordionsOpen).length)
             setAccordionsOpen(initialAccordionsOpen);
+
+        setIsLoading(false);
     }, []);
 
     useLayoutEffect(() => {
@@ -138,6 +141,14 @@ export default function Home() {
             return null;
         })
         .filter(Boolean) as typeof progression.act1;
+
+    if (isLoading) {
+        return (
+            <div className="h-screen w-screen flex items-center justify-center">
+                <div className="text-lg">Loading...</div>
+            </div>
+        );
+    }
 
     return (
         <div>
