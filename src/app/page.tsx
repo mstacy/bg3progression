@@ -3,7 +3,6 @@
 import { useLayoutEffect, useState } from "react";
 import progression from "../../progression.json";
 import { Region } from "./components/Region";
-import { getPercentage } from "./utils";
 
 export type checkboxValues = {
     isChecked: boolean;
@@ -55,9 +54,6 @@ export default function Home() {
                     region={region}
                     checkedBoxes={checkedBoxes}
                     onCheckboxChange={handleChange}
-                    getPercentage={(slug, value) =>
-                        getPercentage(checkedBoxes, slug, value)
-                    }
                 />
             ))}
         </div>

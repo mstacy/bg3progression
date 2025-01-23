@@ -11,6 +11,7 @@ import { checkboxValues } from "../page";
 import { Quest } from "./QuestList";
 import { Interaction } from "./InteractionList";
 import { Item } from "./ItemList";
+import { getPercentage } from "../utils";
 
 export type Location = {
     name: string;
@@ -25,7 +26,6 @@ export const Location = ({
     regionName,
     checkedBoxes,
     onCheckboxChange,
-    getPercentage,
 }: // index,
 {
     location: Location;
@@ -35,13 +35,13 @@ export const Location = ({
         name: string;
         values: checkboxValues;
     }) => void;
-    getPercentage: (
-        slug: keyof checkboxValues,
-        value: string
-    ) => number | string;
     // index: number;
 }) => {
-    const percentComplete = getPercentage("location", location.name);
+    const percentComplete = getPercentage(
+        checkedBoxes,
+        "location",
+        location.name
+    );
 
     return (
         <Accordion

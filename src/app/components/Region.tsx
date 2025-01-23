@@ -6,12 +6,12 @@ import {
 } from "@mui/material";
 import { Location } from "./Location";
 import { checkboxValues } from "../page";
+import { getPercentage } from "../utils";
 
 export const Region = ({
     region,
     checkedBoxes,
     onCheckboxChange,
-    getPercentage,
 }: {
     region: {
         name: string;
@@ -23,12 +23,8 @@ export const Region = ({
         name: string;
         values: checkboxValues;
     }) => void;
-    getPercentage: (
-        slug: keyof checkboxValues,
-        value: string
-    ) => number | string;
 }) => {
-    const percentComplete = getPercentage("region", region.name);
+    const percentComplete = getPercentage(checkedBoxes, "region", region.name);
 
     return (
         <Accordion
@@ -74,7 +70,6 @@ export const Region = ({
                             regionName={region.name}
                             checkedBoxes={checkedBoxes}
                             onCheckboxChange={onCheckboxChange}
-                            getPercentage={getPercentage}
                             // index={index}
                         />
                     )
