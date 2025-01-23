@@ -44,7 +44,11 @@ const mockData = {
     }) => {
         console.log("Checkbox changed:", name, values);
     },
-    getPercentage: () => 0,
+    accordionsOpen: {},
+    onAccordionToggle: (accordionId: string) => {
+        console.log("Accordion toggled:", accordionId);
+    },
+    searchTerm: "",
 };
 
 export const Default: Story = {
@@ -61,6 +65,5 @@ export const WithProgress: Story = {
                 location: "Ravaged Beach",
             },
         },
-        getPercentage: () => 50,
     },
 };
