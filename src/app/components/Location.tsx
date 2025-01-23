@@ -19,6 +19,7 @@ export type Location = {
     quests: Quest[];
     interactions: Interaction[];
     items: Item[];
+    companions?: string[];
 };
 
 export const Location = ({
@@ -68,6 +69,12 @@ export const Location = ({
                     <h3 data-test={`location-name-${location.name}`}>
                         {location.name}
                     </h3>
+
+                    <div>
+                        {location?.companions
+                            ? location.companions.join(", ")
+                            : ""}
+                    </div>
 
                     <div className="flex justify-between items-center">
                         <Button
