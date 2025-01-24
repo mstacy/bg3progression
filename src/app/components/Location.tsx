@@ -12,7 +12,8 @@ import { Quest } from "./QuestList";
 import { Interaction } from "./InteractionList";
 import { Item } from "./ItemList";
 import { getPercentage } from "../utils";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
+import GenericList from "./GenericList";
 
 export type Location = {
     name: string;
@@ -24,20 +25,20 @@ export type Location = {
 };
 
 // Lazy Loading Components
-const QuestList = dynamic(() => import("./QuestList"), {
-    loading: () => <p>Loading quests...</p>,
-    ssr: false,
-});
+// const QuestList = dynamic(() => import("./QuestList"), {
+//     loading: () => <p>Loading quests...</p>,
+//     ssr: false,
+// });
 
-const ItemList = dynamic(() => import("./ItemList"), {
-    loading: () => <p>Loading items...</p>,
-    ssr: false,
-});
+// const ItemList = dynamic(() => import("./ItemList"), {
+//     loading: () => <p>Loading items...</p>,
+//     ssr: false,
+// });
 
-const InteractionList = dynamic(() => import("./InteractionList"), {
-    loading: () => <p>Loading interactions...</p>,
-    ssr: false,
-});
+// const InteractionList = dynamic(() => import("./InteractionList"), {
+//     loading: () => <p>Loading interactions...</p>,
+//     ssr: false,
+// });
 
 export const Location = ({
     location,
@@ -120,8 +121,9 @@ export const Location = ({
                 data-test={`location-details-${location.name}`}
             >
                 {!!location.quests.length && (
-                    <QuestList
-                        quests={location.quests}
+                    <GenericList
+                        items={location.quests}
+                        title="Quests"
                         regionName={regionName}
                         locationName={location.name}
                         checkedBoxes={checkedBoxes}
@@ -132,8 +134,9 @@ export const Location = ({
                 )}
 
                 {!!location.interactions.length && (
-                    <InteractionList
-                        interactions={location.interactions}
+                    <GenericList
+                        items={location.interactions}
+                        title="Interactions"
                         regionName={regionName}
                         locationName={location.name}
                         checkedBoxes={checkedBoxes}
@@ -144,8 +147,9 @@ export const Location = ({
                 )}
 
                 {!!location.items.length && (
-                    <ItemList
+                    <GenericList
                         items={location.items}
+                        title="Items"
                         regionName={regionName}
                         locationName={location.name}
                         checkedBoxes={checkedBoxes}
