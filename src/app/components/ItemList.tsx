@@ -32,11 +32,13 @@ const ItemList = ({
                         };
                     }
                     return (
-                        <div key={item.name} className="flex justify-between">
+                        <div
+                            key={`${item.name}-${regionName}-${locationName}`}
+                            className="flex justify-between"
+                        >
                             <FormControlLabel
                                 label={item.name}
                                 control={<Checkbox />}
-                                key={item.name}
                                 onChange={(e, checked) => {
                                     onCheckboxChange(item.name, {
                                         isChecked: checked,

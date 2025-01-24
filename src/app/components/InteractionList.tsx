@@ -33,7 +33,7 @@ const InteractionList = ({
                     }
                     return (
                         <div
-                            key={interaction.name}
+                            key={`${interaction.name}-${regionName}-${locationName}`}
                             className="flex justify-between"
                         >
                             <FormControlLabel

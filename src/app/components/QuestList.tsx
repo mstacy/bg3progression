@@ -32,7 +32,10 @@ const QuestList = ({
                         };
                     }
                     return (
-                        <div key={quest.name} className="flex justify-between">
+                        <div
+                            key={`${quest.name}-${regionName}-${locationName}`}
+                            className="flex justify-between"
+                        >
                             <FormControlLabel
                                 label={quest.name}
                                 control={<Checkbox />}

@@ -22,6 +22,7 @@ export default function Home() {
         Record<string, boolean>
     >({});
     const [isLoading, setIsLoading] = useState(true);
+    const [originalData] = useState(progression.act1);
 
     useLayoutEffect(() => {
         const savedCheckedBoxes = localStorage.getItem(checkedBoxesKey);
@@ -81,54 +82,56 @@ export default function Home() {
         }));
     };
 
-    const filteredRegions = progression.act1
+    const filteredRegions = originalData
         .map((region) => {
             const searchLower = searchTerm.toLowerCase();
 
-            // If region name matches, keep all locations
-            if (region.name.toLowerCase().includes(searchLower)) {
-                return region;
-            }
+            // Create a deep copy of locations to avoid mutating original data
+            const filteredLocations = region.locations
+                .map((location) => ({
+                    ...location,
+                    quests: [...(location.quests || [])],
+                    items: [...(location.items || [])],
+                    interactions: [...(location.interactions || [])],
+                }))
+                .filter((location) => {
+                    // If location name matches, keep all its contents
+                    if (location.name.toLowerCase().includes(searchLower)) {
+                        return true;
+                    }
 
-            // Filter locations and their contents
-            const filteredLocations = region.locations.filter((location) => {
-                // If location name matches, keep all its contents
-                if (location.name.toLowerCase().includes(searchLower)) {
-                    return true;
-                }
+                    // Filter quests
+                    const matchingQuests =
+                        location.quests?.filter((quest) =>
+                            quest.name.toLowerCase().includes(searchLower)
+                        ) || [];
 
-                // Filter quests
-                const matchingQuests =
-                    location.quests?.filter((quest) =>
-                        quest.name.toLowerCase().includes(searchLower)
-                    ) || [];
+                    // Filter items
+                    const matchingItems =
+                        location.items?.filter((item) =>
+                            item.name.toLowerCase().includes(searchLower)
+                        ) || [];
 
-                // Filter items
-                const matchingItems =
-                    location.items?.filter((item) =>
-                        item.name.toLowerCase().includes(searchLower)
-                    ) || [];
+                    // Filter interactions
+                    const matchingInteractions =
+                        location.interactions?.filter((interaction) =>
+                            interaction.name.toLowerCase().includes(searchLower)
+                        ) || [];
 
-                // Filter interactions
-                const matchingInteractions =
-                    location.interactions?.filter((interaction) =>
-                        interaction.name.toLowerCase().includes(searchLower)
-                    ) || [];
+                    // If any content matches, create filtered location
+                    if (
+                        matchingQuests.length ||
+                        matchingItems.length ||
+                        matchingInteractions.length
+                    ) {
+                        location.quests = matchingQuests;
+                        location.items = matchingItems;
+                        location.interactions = matchingInteractions;
+                        return true;
+                    }
 
-                // If any content matches, create filtered location
-                if (
-                    matchingQuests.length ||
-                    matchingItems.length ||
-                    matchingInteractions.length
-                ) {
-                    location.quests = matchingQuests;
-                    location.items = matchingItems;
-                    location.interactions = matchingInteractions;
-                    return true;
-                }
-
-                return false;
-            });
+                    return false;
+                });
 
             // Only include region if it has matching locations
             if (filteredLocations.length) {
