@@ -84,6 +84,16 @@
                             "name": "Gloves of Power",
                             "link": "https://bg3.wiki/wiki/Gloves_of_Power",
                             "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Silver Pendant",
+                            "link": "https://bg3.wiki/wiki/Silver_Pendant",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "The Watcher's Guide",
+                            "link": "https://bg3.wiki/wiki/The_Watcher%27s_Guide",
+                            "rarity": "uncommon"
                         }
                     ]
                 },
@@ -441,6 +451,10 @@
                         {
                             "name": "Hunt the Devil",
                             "link": "https://bg3.wiki/wiki/Hunt_the_Devil"
+                        },
+                        {
+                            "name": "Our Fiery Friend",
+                            "link": "https://bg3.wiki/wiki/Our_Fiery_Friend"
                         }
                     ],
                     "interactions": [
@@ -621,8 +635,18 @@
                     ],
                     "items": [
                         {
+                            "name": "Blooded Greataxe",
+                            "link": "https://bg3.wiki/wiki/Blooded_Greataxe",
+                            "rarity": "rare"
+                        },
+                        {
                             "name": "Boots of Aid and Comfort",
                             "link": "https://bg3.wiki/wiki/Boots_of_Aid_and_Comfort",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Bow of Awareness",
+                            "link": "https://bg3.wiki/wiki/Bow_of_Awareness",
                             "rarity": "uncommon"
                         },
                         {
@@ -636,6 +660,11 @@
                             "rarity": "uncommon"
                         },
                         {
+                            "name": "Gold Wyrmling Staff",
+                            "link": "https://bg3.wiki/wiki/Gold_Wyrmling_Staff",
+                            "rarity": "rare"
+                        },
+                        {
                             "name": "Gloves of Archery",
                             "link": "https://bg3.wiki/wiki/Gloves_of_Archery",
                             "rarity": "uncommon"
@@ -644,6 +673,16 @@
                             "name": "Glowing Shield",
                             "link": "https://bg3.wiki/wiki/Glowing_Shield",
                             "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Hunter's Dagger",
+                            "link": "https://bg3.wiki/wiki/Hunter%27s_Dagger",
+                            "rarity": "uncommon"
+                        },
+                        {
+                            "name": "Monster Slayer Glaive",
+                            "link": "https://bg3.wiki/wiki/Monster_Slayer_Glaive",
+                            "rarity": "rare"
                         },
                         {
                             "name": "Returning Pike",
