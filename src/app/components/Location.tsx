@@ -67,6 +67,8 @@ export const Location = ({
     );
 
     const accordionId = `location-${regionName}-${location.name}`;
+
+    // Initialize accordion state if not already set
     if (!accordionsOpen[accordionId]) {
         accordionsOpen[accordionId] = false;
     }

@@ -12,18 +12,19 @@ export type checkboxValues = {
 };
 
 export default function Home() {
+    const accordionOpenKey = "accordionsOpen";
+    const [accordionsOpen, setAccordionsOpen] = useState<
+        Record<string, boolean>
+    >({});
     const checkedBoxesKey = "act1";
     const [checkedBoxes, setCheckedBoxes] = useState<
         Record<string, checkboxValues>
     >({});
     const [searchTerm, setSearchTerm] = useState("");
-    const accordionOpenKey = "accordionsOpen";
-    const [accordionsOpen, setAccordionsOpen] = useState<
-        Record<string, boolean>
-    >({});
     const [isLoading, setIsLoading] = useState(true);
     const [originalData] = useState(progression.act1);
 
+    // Load data from localStorage
     useLayoutEffect(() => {
         const savedCheckedBoxes = localStorage.getItem(checkedBoxesKey);
         const savedAccordionsOpen = localStorage.getItem(accordionOpenKey);
@@ -39,6 +40,7 @@ export default function Home() {
         setIsLoading(false);
     }, []);
 
+    // Save data to localStorage for checkbox state
     useLayoutEffect(() => {
         const handler = setTimeout(() => {
             localStorage.setItem(checkedBoxesKey, JSON.stringify(checkedBoxes));
@@ -49,6 +51,7 @@ export default function Home() {
         };
     }, [checkedBoxes]);
 
+    // Save data to localStorage for accordion state
     useLayoutEffect(() => {
         const handler = setTimeout(() => {
             localStorage.setItem(
@@ -62,6 +65,7 @@ export default function Home() {
         };
     }, [accordionsOpen]);
 
+    // Handle checkbox change
     const handleChange = ({
         name,
         values,
@@ -75,6 +79,7 @@ export default function Home() {
         });
     };
 
+    // Handle accordion toggle
     const handleAccordionToggle = (accordionId: string) => {
         setAccordionsOpen((current) => ({
             ...current,
@@ -82,6 +87,7 @@ export default function Home() {
         }));
     };
 
+    // Filter regions, locations, quests, items, and interactions based on search term
     const filteredRegions = originalData
         .map((region) => {
             const searchLower = searchTerm.toLowerCase();

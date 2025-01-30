@@ -32,6 +32,8 @@ export const Region = ({
 }) => {
     const percentComplete = getPercentage(checkedBoxes, "region", region.name);
     const accordionId = `region-${region.name}`;
+
+    // Initialize accordion state if not already set
     if (!accordionsOpen[accordionId]) {
         accordionsOpen[accordionId] = false;
     }
