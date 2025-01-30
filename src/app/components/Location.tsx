@@ -4,81 +4,70 @@ import {
     AccordionSummary,
     Button,
 } from "@mui/material";
-// import { QuestList } from "./QuestList";
-// import { InteractionList } from "./InteractionList";
-// import { ItemList } from "./ItemList";
 import { checkboxValues } from "../page";
-import { Quest } from "./QuestList";
-import { Interaction } from "./InteractionList";
-import { Item } from "./ItemList";
 import { getPercentage } from "../utils";
-// import dynamic from "next/dynamic";
-import GenericList from "./GenericList";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+import { ListItem } from "./GenericList";
 
-export type Location = {
+export type LocationProps = {
     name: string;
     link: string;
-    quests: Quest[];
-    interactions: Interaction[];
-    items: Item[];
+    quests: ListItem[];
+    interactions: ListItem[];
+    items: ListItem[];
     companions?: string[];
 };
 
 // Lazy Loading Components
-// const QuestList = dynamic(() => import("./QuestList"), {
-//     loading: () => <p>Loading quests...</p>,
-//     ssr: false,
-// });
+const GenericList = dynamic(() => import("./GenericList"), {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+});
 
-// const ItemList = dynamic(() => import("./ItemList"), {
-//     loading: () => <p>Loading items...</p>,
-//     ssr: false,
-// });
-
-// const InteractionList = dynamic(() => import("./InteractionList"), {
-//     loading: () => <p>Loading interactions...</p>,
-//     ssr: false,
-// });
-
-export const Location = ({
+const Location = ({
     location,
     regionName,
     checkedBoxes,
     onCheckboxChange,
-    accordionsOpen,
+    initialAccordionsOpen,
     onAccordionToggle,
     searchTerm,
 }: {
-    location: Location;
+    location: LocationProps;
     regionName: string;
     checkedBoxes: Record<string, checkboxValues>;
     onCheckboxChange: (params: {
         name: string;
         values: checkboxValues;
     }) => void;
-    accordionsOpen: Record<string, boolean>;
+    initialAccordionsOpen: Record<string, boolean>;
     onAccordionToggle: (accordionId: string) => void;
     searchTerm: string;
 }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
     const percentComplete = getPercentage(
         checkedBoxes,
         "location",
         location.name
     );
-
     const accordionId = `location-${regionName}-${location.name}`;
 
-    // Initialize accordion state if not already set
-    if (!accordionsOpen[accordionId]) {
-        accordionsOpen[accordionId] = false;
-    }
+    useEffect(() => {
+        if (initialAccordionsOpen[accordionId]) {
+            setIsExpanded(initialAccordionsOpen[accordionId]);
+        }
+    }, [initialAccordionsOpen, accordionId]);
 
     return (
         <Accordion
             key={location.name}
             disableGutters
-            expanded={accordionsOpen[accordionId] || !!searchTerm.length}
-            onChange={() => onAccordionToggle(accordionId)}
+            expanded={isExpanded || !!searchTerm}
+            onChange={() => {
+                setIsExpanded(!isExpanded);
+                onAccordionToggle(accordionId);
+            }}
             slots={{
                 heading: "div",
             }}
@@ -122,7 +111,7 @@ export const Location = ({
                 }}
                 data-test={`location-details-${location.name}`}
             >
-                {!!location.quests.length && (
+                {!!location.quests.length && isExpanded && (
                     <GenericList
                         items={location.quests}
                         title="Quests"
@@ -135,7 +124,7 @@ export const Location = ({
                     />
                 )}
 
-                {!!location.interactions.length && (
+                {!!location.interactions.length && isExpanded && (
                     <GenericList
                         items={location.interactions}
                         title="Interactions"
@@ -148,7 +137,7 @@ export const Location = ({
                     />
                 )}
 
-                {!!location.items.length && (
+                {!!location.items.length && isExpanded && (
                     <GenericList
                         items={location.items}
                         title="Items"
@@ -164,3 +153,5 @@ export const Location = ({
         </Accordion>
     );
 };
+
+export default Location;

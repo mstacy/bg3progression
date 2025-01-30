@@ -17,6 +17,9 @@ export default function Home() {
     const [accordionsOpen, setAccordionsOpen] = useState<
         Record<string, boolean>
     >({});
+    const [initialAccordionsOpen, setInitialAccordionsOpen] = useState<
+        Record<string, boolean>
+    >({});
     const checkedBoxesKey = "act1";
     const [checkedBoxes, setCheckedBoxes] = useState<
         Record<string, checkboxValues>
@@ -40,8 +43,11 @@ export default function Home() {
             setCheckedBoxes(initialCheckedBoxes);
 
         const initialAccordionsOpen = JSON.parse(savedAccordionsOpen || "{}");
-        if (Object.keys(initialAccordionsOpen).length)
-            setAccordionsOpen(initialAccordionsOpen);
+        console.log("initialAccordionsOpen", initialAccordionsOpen);
+        if (Object.keys(initialAccordionsOpen).length) {
+            setAccordionsOpen({ ...initialAccordionsOpen });
+            setInitialAccordionsOpen({ ...initialAccordionsOpen });
+        }
 
         setIsLoading(false);
     }, []);
@@ -91,6 +97,7 @@ export default function Home() {
             ...current,
             [accordionId]: !current[accordionId],
         }));
+        console.log("accordionsOpen", accordionsOpen);
     };
 
     // Filter regions, locations, quests, items, and interactions based on search term
@@ -175,7 +182,7 @@ export default function Home() {
                         region={region}
                         checkedBoxes={checkedBoxes}
                         onCheckboxChange={handleChange}
-                        accordionsOpen={accordionsOpen}
+                        initialAccordionsOpen={initialAccordionsOpen}
                         onAccordionToggle={handleAccordionToggle}
                         searchTerm={searchTerm}
                     />

@@ -4,50 +4,63 @@ import {
     AccordionSummary,
     Button,
 } from "@mui/material";
-import { Location } from "./Location";
 import { checkboxValues } from "../page";
 import { getPercentage } from "../utils";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { LocationProps } from "./Location";
+
+// Lazy Loading Components
+const Location = dynamic(() => import("./Location"), {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+});
 
 export const Region = ({
     region,
     checkedBoxes,
     onCheckboxChange,
-    accordionsOpen,
+    initialAccordionsOpen,
     onAccordionToggle,
     searchTerm,
 }: {
     region: {
         name: string;
         link: string;
-        locations: Location[];
+        locations: LocationProps[];
     };
     checkedBoxes: Record<string, checkboxValues>;
     onCheckboxChange: (params: {
         name: string;
         values: checkboxValues;
     }) => void;
-    accordionsOpen: Record<string, boolean>;
+    initialAccordionsOpen: Record<string, boolean>;
     onAccordionToggle: (accordionId: string) => void;
     searchTerm: string;
 }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
     const percentComplete = getPercentage(checkedBoxes, "region", region.name);
     const accordionId = `region-${region.name}`;
 
-    // Initialize accordion state if not already set
-    if (!accordionsOpen[accordionId]) {
-        accordionsOpen[accordionId] = false;
-    }
+    useEffect(() => {
+        if (initialAccordionsOpen[accordionId]) {
+            setIsExpanded(initialAccordionsOpen[accordionId]);
+        }
+    }, [initialAccordionsOpen, accordionId]);
 
     return (
         <Accordion
             key={region.name}
             disableGutters
-            expanded={accordionsOpen[`region-${region.name}`] || !!searchTerm}
+            expanded={isExpanded || !!searchTerm}
             slots={{
                 heading: "div",
             }}
             data-test={`region-accordion-${region.name}`}
-            onChange={() => onAccordionToggle(`region-${region.name}`)}
+            onChange={() => {
+                setIsExpanded(!isExpanded);
+                onAccordionToggle(`region-${region.name}`);
+            }}
         >
             <AccordionSummary>
                 <div className="flex justify-between w-full items-center">
@@ -80,7 +93,7 @@ export const Region = ({
                         regionName={region.name}
                         checkedBoxes={checkedBoxes}
                         onCheckboxChange={onCheckboxChange}
-                        accordionsOpen={accordionsOpen}
+                        initialAccordionsOpen={initialAccordionsOpen}
                         onAccordionToggle={onAccordionToggle}
                         searchTerm={searchTerm}
                     />
