@@ -1,18 +1,14 @@
 import { TextField } from "@mui/material";
 import { useCallback } from "react";
 import debounce from "lodash/debounce";
-import { getPercentage } from "../utils";
-import { checkboxValues } from "../page";
 
 export const Header = ({
-    checkedBoxes,
     onSearch,
+    actCompletion,
 }: {
-    checkedBoxes: Record<string, checkboxValues>;
     onSearch: (searchTerm: string) => void;
+    actCompletion: () => number;
 }) => {
-    const actCompletion = getPercentage(checkedBoxes, "region", "any");
-
     // Debounce the search callback
     const debouncedSearch = useCallback(
         (value: string) => {
@@ -33,7 +29,7 @@ export const Header = ({
                         className="text-sm text-gray-600"
                         data-test="act-completion"
                     >
-                        {actCompletion}% Complete
+                        {actCompletion()}% Complete
                     </div>
                 </div>
 

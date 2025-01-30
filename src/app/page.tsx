@@ -1,9 +1,10 @@
 "use client";
 
-import { useLayoutEffect, useState } from "react";
+import { useCallback, useLayoutEffect, useState } from "react";
 import progression from "../../progression.json";
 import { Region } from "./components/Region";
 import { Header } from "./components/Header";
+import { getPercentage } from "./utils";
 
 export type checkboxValues = {
     isChecked: boolean;
@@ -23,6 +24,11 @@ export default function Home() {
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [originalData] = useState(progression.act1);
+
+    const actCompletion = useCallback(
+        () => getPercentage(checkedBoxes, "region", "any"),
+        [checkedBoxes]
+    );
 
     // Load data from localStorage
     useLayoutEffect(() => {
@@ -161,7 +167,7 @@ export default function Home() {
 
     return (
         <div>
-            <Header checkedBoxes={checkedBoxes} onSearch={setSearchTerm} />
+            <Header onSearch={setSearchTerm} actCompletion={actCompletion} />
             <main className="max-w-4xl mx-auto p-4 pt-24">
                 {filteredRegions.map((region) => (
                     <Region

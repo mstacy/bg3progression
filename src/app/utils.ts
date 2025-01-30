@@ -14,5 +14,5 @@ export const getPercentage = (
     const checked = checks.filter((check) => check.isChecked);
     if (!checked.length) return 0;
 
-    return ((checked.length / checks.length) * 100).toFixed(0);
+    return Math.round((checked.length / checks.length) * 100);
 };
