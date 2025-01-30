@@ -1,5 +1,5 @@
-import { Button, Checkbox, FormControlLabel } from "@mui/material";
 import { checkboxValues } from "../page";
+import GenericListItem from "./GenericListItem";
 
 export type ListItem = {
     name: string;
@@ -27,43 +27,16 @@ const GenericList = ({
         <>
             <h4>{title}</h4>
             <div className="flex flex-col">
-                {items.map((item) => {
-                    if (!checkedBoxes[item.name]) {
-                        checkedBoxes[item.name] = {
-                            isChecked: false,
-                            region: regionName,
-                            location: locationName,
-                        };
-                    }
-                    return (
-                        <div
-                            key={`${item.name}-${regionName}-${locationName}`}
-                            className="flex justify-between"
-                        >
-                            <FormControlLabel
-                                label={item.name}
-                                control={
-                                    <Checkbox
-                                        id={`${item.name}-${regionName}-${locationName}`}
-                                    />
-                                }
-                                onChange={(e, checked) => {
-                                    onCheckboxChange(item.name, {
-                                        isChecked: checked,
-                                        region: regionName,
-                                        location: locationName,
-                                    });
-                                }}
-                                checked={checkedBoxes[item.name].isChecked}
-                            />
-                            {item.link && (
-                                <Button href={item.link} target="_blank">
-                                    View
-                                </Button>
-                            )}
-                        </div>
-                    );
-                })}
+                {items.map((item) => (
+                    <GenericListItem
+                        key={`${item.name}-${regionName}-${locationName}`}
+                        item={item}
+                        regionName={regionName}
+                        locationName={locationName}
+                        checkedBoxes={checkedBoxes}
+                        onCheckboxChange={onCheckboxChange}
+                    />
+                ))}
             </div>
         </>
     );
