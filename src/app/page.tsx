@@ -43,7 +43,6 @@ export default function Home() {
             setCheckedBoxes(initialCheckedBoxes);
 
         const initialAccordionsOpen = JSON.parse(savedAccordionsOpen || "{}");
-        console.log("initialAccordionsOpen", initialAccordionsOpen);
         if (Object.keys(initialAccordionsOpen).length) {
             setAccordionsOpen({ ...initialAccordionsOpen });
             setInitialAccordionsOpen({ ...initialAccordionsOpen });
@@ -97,7 +96,6 @@ export default function Home() {
             ...current,
             [accordionId]: !current[accordionId],
         }));
-        console.log("accordionsOpen", accordionsOpen);
     };
 
     // Filter regions, locations, quests, items, and interactions based on search term
