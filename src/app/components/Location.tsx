@@ -74,7 +74,7 @@ const Location = ({
         <Accordion
             key={location.name}
             disableGutters
-            expanded={!!searchTerm || isExpanded}
+            expanded={isExpanded}
             onChange={() => {
                 setIsExpanded(!isExpanded);
                 onAccordionToggle(accordionId);
