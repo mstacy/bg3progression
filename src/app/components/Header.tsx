@@ -1,6 +1,4 @@
 import { TextField } from "@mui/material";
-import { useCallback } from "react";
-import debounce from "lodash/debounce";
 
 export const Header = ({
     onSearch,
@@ -9,16 +7,16 @@ export const Header = ({
     onSearch: (searchTerm: string) => void;
     actCompletion: () => number;
 }) => {
-    // Debounce the search callback
-    const debouncedSearch = useCallback(
-        (value: string) => {
-            const handler = debounce((searchValue: string) => {
-                onSearch(searchValue);
-            }, 300);
-            handler(value);
-        },
-        [onSearch]
-    );
+    // Throttle the search callback
+    let timeout: NodeJS.Timeout | null = null;
+    const throttledSearch = (searchValue: string) => {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        timeout = setTimeout(() => {
+            onSearch(searchValue);
+        }, 1000);
+    };
 
     return (
         <header className="fixed w-full top-0 bg-white z-10 p-4 shadow-md">
@@ -36,7 +34,7 @@ export const Header = ({
                 <TextField
                     placeholder="Search locations, quests, items..."
                     size="small"
-                    onChange={(e) => debouncedSearch(e.target.value)}
+                    onChange={(e) => throttledSearch(e.target.value)}
                     className="w-64"
                     data-test="search-input"
                 />
