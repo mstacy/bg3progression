@@ -19,6 +19,7 @@ const Location = dynamic(() => import("./Location"), {
 export const Region = ({
     region,
     checkedBoxes,
+    initialCheckedBoxes,
     onCheckboxChange,
     initialAccordionsOpen,
     onAccordionToggle,
@@ -30,6 +31,7 @@ export const Region = ({
         locations: LocationProps[];
     };
     checkedBoxes: Record<string, checkboxValues>;
+    initialCheckedBoxes: Record<string, checkboxValues>;
     onCheckboxChange: (params: {
         name: string;
         values: checkboxValues;
@@ -92,6 +94,7 @@ export const Region = ({
                         location={location}
                         regionName={region.name}
                         checkedBoxes={checkedBoxes}
+                        initialCheckedBoxes={initialCheckedBoxes}
                         onCheckboxChange={onCheckboxChange}
                         initialAccordionsOpen={initialAccordionsOpen}
                         onAccordionToggle={onAccordionToggle}

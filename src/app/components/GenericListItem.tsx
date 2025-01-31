@@ -1,12 +1,13 @@
 import { Button, Checkbox, FormControlLabel } from "@mui/material";
 import { checkboxValues } from "../page";
 import { ListItem } from "./GenericList";
+import { useEffect, useState } from "react";
 
 type GenericListItemProps = {
     item: ListItem;
     regionName: string;
     locationName: string;
-    checkedBoxes: Record<string, checkboxValues>;
+    initialChecked: boolean;
     onCheckboxChange: (name: string, values: checkboxValues) => void;
 };
 
@@ -14,16 +15,16 @@ const GenericListItem = ({
     item,
     regionName,
     locationName,
-    checkedBoxes,
+    initialChecked,
     onCheckboxChange,
 }: GenericListItemProps) => {
-    if (!checkedBoxes[item.name]) {
-        checkedBoxes[item.name] = {
-            isChecked: false,
-            region: regionName,
-            location: locationName,
-        };
-    }
+    const [isChecked, setIsChecked] = useState(false);
+
+    useEffect(() => {
+        if (initialChecked) {
+            setIsChecked(initialChecked);
+        }
+    }, [initialChecked]);
 
     return (
         <div
@@ -38,13 +39,14 @@ const GenericListItem = ({
                     />
                 }
                 onChange={(e, checked) => {
+                    setIsChecked(checked);
                     onCheckboxChange(item.name, {
                         isChecked: checked,
                         region: regionName,
                         location: locationName,
                     });
                 }}
-                checked={checkedBoxes[item.name].isChecked}
+                checked={isChecked}
             />
             {item.link && (
                 <Button href={item.link} target="_blank">

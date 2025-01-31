@@ -24,6 +24,9 @@ export default function Home() {
     const [checkedBoxes, setCheckedBoxes] = useState<
         Record<string, checkboxValues>
     >({});
+    const [initialCheckedBoxes, setInitialCheckedBoxes] = useState<
+        Record<string, checkboxValues>
+    >({});
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [originalData] = useState(progression.act1);
@@ -39,12 +42,14 @@ export default function Home() {
         const savedAccordionsOpen = localStorage.getItem(accordionOpenKey);
 
         const initialCheckedBoxes = JSON.parse(savedCheckedBoxes || "{}");
-        if (Object.keys(initialCheckedBoxes).length)
+        if (Object.keys(initialCheckedBoxes).length) {
             setCheckedBoxes(initialCheckedBoxes);
+            setInitialCheckedBoxes({ ...initialCheckedBoxes });
+        }
 
         const initialAccordionsOpen = JSON.parse(savedAccordionsOpen || "{}");
         if (Object.keys(initialAccordionsOpen).length) {
-            setAccordionsOpen({ ...initialAccordionsOpen });
+            setAccordionsOpen(initialAccordionsOpen);
             setInitialAccordionsOpen({ ...initialAccordionsOpen });
         }
 
@@ -179,6 +184,7 @@ export default function Home() {
                         key={region.name}
                         region={region}
                         checkedBoxes={checkedBoxes}
+                        initialCheckedBoxes={initialCheckedBoxes}
                         onCheckboxChange={handleChange}
                         initialAccordionsOpen={initialAccordionsOpen}
                         onAccordionToggle={handleAccordionToggle}

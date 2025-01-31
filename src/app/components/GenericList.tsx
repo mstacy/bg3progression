@@ -11,7 +11,7 @@ type GenericListProps = {
     title: string;
     regionName: string;
     locationName: string;
-    checkedBoxes: Record<string, checkboxValues>;
+    initialCheckedBoxes: Record<string, checkboxValues>;
     onCheckboxChange: (name: string, values: checkboxValues) => void;
 };
 
@@ -20,7 +20,7 @@ const GenericList = ({
     title,
     regionName,
     locationName,
-    checkedBoxes,
+    initialCheckedBoxes,
     onCheckboxChange,
 }: GenericListProps) => {
     return (
@@ -33,7 +33,9 @@ const GenericList = ({
                         item={item}
                         regionName={regionName}
                         locationName={locationName}
-                        checkedBoxes={checkedBoxes}
+                        initialChecked={
+                            initialCheckedBoxes[item.name]?.isChecked
+                        }
                         onCheckboxChange={onCheckboxChange}
                     />
                 ))}

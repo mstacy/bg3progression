@@ -29,6 +29,7 @@ const Location = ({
     location,
     regionName,
     checkedBoxes,
+    initialCheckedBoxes,
     onCheckboxChange,
     initialAccordionsOpen,
     onAccordionToggle,
@@ -37,6 +38,7 @@ const Location = ({
     location: LocationProps;
     regionName: string;
     checkedBoxes: Record<string, checkboxValues>;
+    initialCheckedBoxes: Record<string, checkboxValues>;
     onCheckboxChange: (params: {
         name: string;
         values: checkboxValues;
@@ -128,7 +130,7 @@ const Location = ({
                         title="Quests"
                         regionName={regionName}
                         locationName={location.name}
-                        checkedBoxes={checkedBoxes}
+                        initialCheckedBoxes={initialCheckedBoxes}
                         onCheckboxChange={(name, values) =>
                             onCheckboxChange({ name, values })
                         }
@@ -141,7 +143,7 @@ const Location = ({
                         title="Interactions"
                         regionName={regionName}
                         locationName={location.name}
-                        checkedBoxes={checkedBoxes}
+                        initialCheckedBoxes={initialCheckedBoxes}
                         onCheckboxChange={(name, values) =>
                             onCheckboxChange({ name, values })
                         }
@@ -154,7 +156,7 @@ const Location = ({
                         title="Items"
                         regionName={regionName}
                         locationName={location.name}
-                        checkedBoxes={checkedBoxes}
+                        initialCheckedBoxes={initialCheckedBoxes}
                         onCheckboxChange={(name, values) =>
                             onCheckboxChange({ name, values })
                         }
