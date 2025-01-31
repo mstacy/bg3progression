@@ -1,10 +1,7 @@
-import { checkboxValues } from "../page";
+import { useProgress } from "../context/ProgressContext";
 import GenericListItem from "./GenericListItem";
-
-export type ListItem = {
-    name: string;
-    link: string;
-};
+import { checkboxValues } from "../page";
+import { ListItem } from "./GenericListItem";
 
 type GenericListProps = {
     items: ListItem[];
@@ -20,9 +17,9 @@ const GenericList = ({
     title,
     regionName,
     locationName,
-    initialCheckedBoxes,
-    onCheckboxChange,
-}: GenericListProps) => {
+}: Omit<GenericListProps, "initialCheckedBoxes" | "onCheckboxChange">) => {
+    const { initialCheckedBoxes } = useProgress();
+
     return (
         <>
             <h4>{title}</h4>
@@ -36,7 +33,6 @@ const GenericList = ({
                         initialChecked={
                             initialCheckedBoxes[item.name]?.isChecked
                         }
-                        onCheckboxChange={onCheckboxChange}
                     />
                 ))}
             </div>

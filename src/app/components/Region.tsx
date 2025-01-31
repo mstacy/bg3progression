@@ -4,11 +4,10 @@ import {
     AccordionSummary,
     Button,
 } from "@mui/material";
-import { checkboxValues } from "../page";
-import { getPercentage } from "../utils";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { LocationProps } from "./Location";
+import { useProgress } from "../context/ProgressContext";
 
 // Lazy Loading Components
 const Location = dynamic(() => import("./Location"), {
@@ -18,11 +17,6 @@ const Location = dynamic(() => import("./Location"), {
 
 export const Region = ({
     region,
-    checkedBoxes,
-    initialCheckedBoxes,
-    onCheckboxChange,
-    initialAccordionsOpen,
-    onAccordionToggle,
     searchTerm,
 }: {
     region: {
@@ -30,18 +24,15 @@ export const Region = ({
         link: string;
         locations: LocationProps[];
     };
-    checkedBoxes: Record<string, checkboxValues>;
-    initialCheckedBoxes: Record<string, checkboxValues>;
-    onCheckboxChange: (params: {
-        name: string;
-        values: checkboxValues;
-    }) => void;
-    initialAccordionsOpen: Record<string, boolean>;
-    onAccordionToggle: (accordionId: string) => void;
     searchTerm: string;
 }) => {
+    const {
+        initialAccordionsOpen,
+        handleAccordionToggle,
+        getPercentageComplete,
+    } = useProgress();
     const [isExpanded, setIsExpanded] = useState(false);
-    const percentComplete = getPercentage(checkedBoxes, "region", region.name);
+    const percentComplete = getPercentageComplete("region", region.name);
     const accordionId = `region-${region.name}`;
 
     useEffect(() => {
@@ -61,7 +52,7 @@ export const Region = ({
             data-test={`region-accordion-${region.name}`}
             onChange={() => {
                 setIsExpanded(!isExpanded);
-                onAccordionToggle(`region-${region.name}`);
+                handleAccordionToggle(`region-${region.name}`);
             }}
         >
             <AccordionSummary>
@@ -93,11 +84,6 @@ export const Region = ({
                         key={location.name}
                         location={location}
                         regionName={region.name}
-                        checkedBoxes={checkedBoxes}
-                        initialCheckedBoxes={initialCheckedBoxes}
-                        onCheckboxChange={onCheckboxChange}
-                        initialAccordionsOpen={initialAccordionsOpen}
-                        onAccordionToggle={onAccordionToggle}
                         searchTerm={searchTerm}
                     />
                 ))}

@@ -1,12 +1,12 @@
 import { TextField } from "@mui/material";
+import { useProgress } from "../context/ProgressContext";
 
 export const Header = ({
     onSearch,
-    actCompletion,
 }: {
     onSearch: (searchTerm: string) => void;
-    actCompletion: () => number;
 }) => {
+    const { getPercentageComplete } = useProgress();
     // Throttle the search callback
     let timeout: NodeJS.Timeout | null = null;
     const throttledSearch = (searchValue: string) => {
@@ -15,7 +15,7 @@ export const Header = ({
         }
         timeout = setTimeout(() => {
             onSearch(searchValue);
-        }, 1000);
+        }, 300);
     };
 
     return (
@@ -27,7 +27,7 @@ export const Header = ({
                         className="text-sm text-gray-600"
                         data-test="act-completion"
                     >
-                        {actCompletion()}% Complete
+                        {getPercentageComplete("region", "any")}% Complete
                     </div>
                 </div>
 

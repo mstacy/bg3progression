@@ -1,30 +1,45 @@
 import { Button, Checkbox, FormControlLabel } from "@mui/material";
-import { checkboxValues } from "../page";
-import { ListItem } from "./GenericList";
 import { useEffect, useState } from "react";
+import { useProgress } from "../context/ProgressContext";
+
+export type ListItem = {
+    name: string;
+    link: string;
+};
 
 type GenericListItemProps = {
     item: ListItem;
     regionName: string;
     locationName: string;
     initialChecked: boolean;
-    onCheckboxChange: (name: string, values: checkboxValues) => void;
 };
 
 const GenericListItem = ({
     item,
     regionName,
     locationName,
-    initialChecked,
-    onCheckboxChange,
-}: GenericListItemProps) => {
+    initialChecked = false,
+}: Omit<GenericListItemProps, "onCheckboxChange">) => {
+    const { handleCheckboxChange } = useProgress();
     const [isChecked, setIsChecked] = useState(false);
 
     useEffect(() => {
-        if (initialChecked) {
-            setIsChecked(initialChecked);
+        // Only set the initial state once on mount
+        setIsChecked(initialChecked);
+
+        if (!initialChecked) {
+            handleCheckboxChange({
+                name: item.name,
+                values: {
+                    isChecked: false,
+                    region: regionName,
+                    location: locationName,
+                },
+            });
         }
-    }, [initialChecked]);
+        // Only run once on mount
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div
@@ -40,10 +55,13 @@ const GenericListItem = ({
                 }
                 onChange={(e, checked) => {
                     setIsChecked(checked);
-                    onCheckboxChange(item.name, {
-                        isChecked: checked,
-                        region: regionName,
-                        location: locationName,
+                    handleCheckboxChange({
+                        name: item.name,
+                        values: {
+                            isChecked: checked,
+                            region: regionName,
+                            location: locationName,
+                        },
                     });
                 }}
                 checked={isChecked}

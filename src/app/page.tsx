@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useLayoutEffect, useState, useMemo } from "react";
+import { useLayoutEffect, useState, useMemo } from "react";
 import progression from "../../progression.json";
 import { Region } from "./components/Region";
 import { Header } from "./components/Header";
-import { getPercentage } from "./utils";
+import { ProgressProvider } from "./context/ProgressContext";
 
 export type checkboxValues = {
     isChecked: boolean;
@@ -13,28 +13,9 @@ export type checkboxValues = {
 };
 
 export default function Home() {
-    const accordionOpenKey = "accordionsOpen";
-    const [accordionsOpen, setAccordionsOpen] = useState<
-        Record<string, boolean>
-    >({});
-    const [initialAccordionsOpen, setInitialAccordionsOpen] = useState<
-        Record<string, boolean>
-    >({});
-    const checkedBoxesKey = "act1";
-    const [checkedBoxes, setCheckedBoxes] = useState<
-        Record<string, checkboxValues>
-    >({});
-    const [initialCheckedBoxes, setInitialCheckedBoxes] = useState<
-        Record<string, checkboxValues>
-    >({});
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [originalData] = useState(progression.act1);
-
-    const actCompletion = useCallback(
-        () => getPercentage(checkedBoxes, "region", "any"),
-        [checkedBoxes]
-    );
 
     const filteredRegions = useMemo(() => {
         return originalData
@@ -103,72 +84,9 @@ export default function Home() {
             .filter(Boolean) as typeof progression.act1;
     }, [searchTerm, originalData]);
 
-    // Load data from localStorage
     useLayoutEffect(() => {
-        const savedCheckedBoxes = localStorage.getItem(checkedBoxesKey);
-        const savedAccordionsOpen = localStorage.getItem(accordionOpenKey);
-
-        const initialCheckedBoxes = JSON.parse(savedCheckedBoxes || "{}");
-        if (Object.keys(initialCheckedBoxes).length) {
-            setCheckedBoxes(initialCheckedBoxes);
-            setInitialCheckedBoxes({ ...initialCheckedBoxes });
-        }
-
-        const initialAccordionsOpen = JSON.parse(savedAccordionsOpen || "{}");
-        if (Object.keys(initialAccordionsOpen).length) {
-            setAccordionsOpen(initialAccordionsOpen);
-            setInitialAccordionsOpen({ ...initialAccordionsOpen });
-        }
-
         setIsLoading(false);
     }, []);
-
-    // Save data to localStorage for checkbox state
-    useLayoutEffect(() => {
-        const handler = setTimeout(() => {
-            localStorage.setItem(checkedBoxesKey, JSON.stringify(checkedBoxes));
-        }, 1000);
-
-        return () => {
-            clearTimeout(handler);
-        };
-    }, [checkedBoxes]);
-
-    // Save data to localStorage for accordion state
-    useLayoutEffect(() => {
-        const handler = setTimeout(() => {
-            localStorage.setItem(
-                accordionOpenKey,
-                JSON.stringify(accordionsOpen)
-            );
-        }, 1000);
-
-        return () => {
-            clearTimeout(handler);
-        };
-    }, [accordionsOpen]);
-
-    // Handle checkbox change
-    const handleChange = ({
-        name,
-        values,
-    }: {
-        name: string;
-        values: checkboxValues;
-    }) => {
-        checkedBoxes[name] = values;
-        setCheckedBoxes({
-            ...checkedBoxes,
-        });
-    };
-
-    // Handle accordion toggle
-    const handleAccordionToggle = (accordionId: string) => {
-        setAccordionsOpen((current) => ({
-            ...current,
-            [accordionId]: !current[accordionId],
-        }));
-    };
 
     if (isLoading) {
         return (
@@ -179,22 +97,19 @@ export default function Home() {
     }
 
     return (
-        <div>
-            <Header onSearch={setSearchTerm} actCompletion={actCompletion} />
-            <main className="max-w-4xl mx-auto p-4 pt-24">
-                {filteredRegions.map((region) => (
-                    <Region
-                        key={region.name}
-                        region={region}
-                        checkedBoxes={checkedBoxes}
-                        initialCheckedBoxes={initialCheckedBoxes}
-                        onCheckboxChange={handleChange}
-                        initialAccordionsOpen={initialAccordionsOpen}
-                        onAccordionToggle={handleAccordionToggle}
-                        searchTerm={searchTerm}
-                    />
-                ))}
-            </main>
-        </div>
+        <ProgressProvider>
+            <div>
+                <Header onSearch={setSearchTerm} />
+                <main className="max-w-4xl mx-auto p-4 pt-24">
+                    {filteredRegions.map((region) => (
+                        <Region
+                            key={region.name}
+                            region={region}
+                            searchTerm={searchTerm}
+                        />
+                    ))}
+                </main>
+            </div>
+        </ProgressProvider>
     );
 }

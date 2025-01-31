@@ -4,11 +4,10 @@ import {
     AccordionSummary,
     Button,
 } from "@mui/material";
-import { checkboxValues } from "../page";
-import { getPercentage } from "../utils";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { ListItem } from "./GenericList";
+import { ListItem } from "./GenericListItem";
+import { useProgress } from "../context/ProgressContext";
 
 export type LocationProps = {
     name: string;
@@ -28,32 +27,20 @@ const GenericList = dynamic(() => import("./GenericList"), {
 const Location = ({
     location,
     regionName,
-    checkedBoxes,
-    initialCheckedBoxes,
-    onCheckboxChange,
-    initialAccordionsOpen,
-    onAccordionToggle,
     searchTerm,
 }: {
     location: LocationProps;
     regionName: string;
-    checkedBoxes: Record<string, checkboxValues>;
-    initialCheckedBoxes: Record<string, checkboxValues>;
-    onCheckboxChange: (params: {
-        name: string;
-        values: checkboxValues;
-    }) => void;
-    initialAccordionsOpen: Record<string, boolean>;
-    onAccordionToggle: (accordionId: string) => void;
     searchTerm: string;
 }) => {
+    const {
+        initialAccordionsOpen,
+        handleAccordionToggle,
+        getPercentageComplete,
+    } = useProgress();
     const [isExpanded, setIsExpanded] = useState(false);
     const [prevExpanded, setPrevExpanded] = useState<boolean | null>(null);
-    const percentComplete = getPercentage(
-        checkedBoxes,
-        "location",
-        location.name
-    );
+    const percentComplete = getPercentageComplete("location", location.name);
     const accordionId = `location-${regionName}-${location.name}`;
 
     useEffect(() => {
@@ -79,7 +66,7 @@ const Location = ({
             expanded={isExpanded}
             onChange={() => {
                 setIsExpanded(!isExpanded);
-                onAccordionToggle(accordionId);
+                handleAccordionToggle(accordionId);
             }}
             slots={{
                 heading: "div",
@@ -130,10 +117,6 @@ const Location = ({
                         title="Quests"
                         regionName={regionName}
                         locationName={location.name}
-                        initialCheckedBoxes={initialCheckedBoxes}
-                        onCheckboxChange={(name, values) =>
-                            onCheckboxChange({ name, values })
-                        }
                     />
                 )}
 
@@ -143,10 +126,6 @@ const Location = ({
                         title="Interactions"
                         regionName={regionName}
                         locationName={location.name}
-                        initialCheckedBoxes={initialCheckedBoxes}
-                        onCheckboxChange={(name, values) =>
-                            onCheckboxChange({ name, values })
-                        }
                     />
                 )}
 
@@ -156,10 +135,6 @@ const Location = ({
                         title="Items"
                         regionName={regionName}
                         locationName={location.name}
-                        initialCheckedBoxes={initialCheckedBoxes}
-                        onCheckboxChange={(name, values) =>
-                            onCheckboxChange({ name, values })
-                        }
                     />
                 )}
             </AccordionDetails>
