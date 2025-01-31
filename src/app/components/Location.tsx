@@ -46,6 +46,7 @@ const Location = ({
     searchTerm: string;
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [prevExpanded, setPrevExpanded] = useState<boolean | null>(null);
     const percentComplete = getPercentage(
         checkedBoxes,
         "location",
@@ -59,11 +60,21 @@ const Location = ({
         }
     }, [initialAccordionsOpen, accordionId]);
 
+    useEffect(() => {
+        if (searchTerm) {
+            if (prevExpanded === null) setPrevExpanded(isExpanded);
+            setIsExpanded(true);
+        } else {
+            if (prevExpanded !== null) setIsExpanded(prevExpanded);
+            setPrevExpanded(null);
+        }
+    }, [isExpanded, prevExpanded, searchTerm]);
+
     return (
         <Accordion
             key={location.name}
             disableGutters
-            expanded={isExpanded || !!searchTerm}
+            expanded={!!searchTerm || isExpanded}
             onChange={() => {
                 setIsExpanded(!isExpanded);
                 onAccordionToggle(accordionId);
