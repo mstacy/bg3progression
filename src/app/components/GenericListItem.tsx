@@ -11,20 +11,21 @@ type GenericListItemProps = {
     item: ListItem;
     regionName: string;
     locationName: string;
-    initialChecked: boolean;
 };
 
 const GenericListItem = ({
     item,
     regionName,
     locationName,
-    initialChecked = false,
-}: Omit<GenericListItemProps, "onCheckboxChange">) => {
-    const { handleCheckboxChange } = useProgress();
+}: GenericListItemProps) => {
+    const { checkedBoxes, handleCheckboxChange } = useProgress();
     const [isChecked, setIsChecked] = useState(false);
 
     useEffect(() => {
         // Only set the initial state once on mount
+        const initialChecked = checkedBoxes[`${item.name}`]?.isChecked
+            ? true
+            : false;
         setIsChecked(initialChecked);
 
         if (!initialChecked) {
@@ -51,6 +52,7 @@ const GenericListItem = ({
                 control={
                     <Checkbox
                         id={`${item.name}-${regionName}-${locationName}`}
+                        data-test={`item-checkbox`}
                     />
                 }
                 onChange={(e, checked) => {
@@ -65,9 +67,14 @@ const GenericListItem = ({
                     });
                 }}
                 checked={isChecked}
+                data-test={`item-checkbox-label`}
             />
             {item.link && (
-                <Button href={item.link} target="_blank">
+                <Button
+                    href={item.link}
+                    target="_blank"
+                    data-test={`item-view-button`}
+                >
                     View
                 </Button>
             )}

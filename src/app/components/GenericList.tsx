@@ -1,4 +1,3 @@
-import { useProgress } from "../context/ProgressContext";
 import GenericListItem from "./GenericListItem";
 import { checkboxValues } from "../page";
 import { ListItem } from "./GenericListItem";
@@ -18,11 +17,9 @@ const GenericList = ({
     regionName,
     locationName,
 }: Omit<GenericListProps, "initialCheckedBoxes" | "onCheckboxChange">) => {
-    const { initialCheckedBoxes } = useProgress();
-
     return (
         <>
-            <h4>{title}</h4>
+            <h4 data-test={`list-name`}>{title}</h4>
             <div className="flex flex-col">
                 {items.map((item) => (
                     <GenericListItem
@@ -30,9 +27,6 @@ const GenericList = ({
                         item={item}
                         regionName={regionName}
                         locationName={locationName}
-                        initialChecked={
-                            initialCheckedBoxes[item.name]?.isChecked
-                        }
                     />
                 ))}
             </div>

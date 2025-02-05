@@ -6,7 +6,6 @@ type ProgressContextType = {
     accordionsOpen: Record<string, boolean>;
     initialAccordionsOpen: Record<string, boolean>;
     checkedBoxes: Record<string, checkboxValues>;
-    initialCheckedBoxes: Record<string, checkboxValues>;
     handleAccordionToggle: (accordionId: string) => void;
     handleCheckboxChange: (params: {
         name: string;
@@ -32,9 +31,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     const [checkedBoxes, setCheckedBoxes] = useState<
         Record<string, checkboxValues>
     >({});
-    const [initialCheckedBoxes, setInitialCheckedBoxes] = useState<
-        Record<string, checkboxValues>
-    >({});
 
     // Load data from localStorage
     useEffect(() => {
@@ -44,7 +40,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         const initialCheckedBoxes = JSON.parse(savedCheckedBoxes || "{}");
         if (Object.keys(initialCheckedBoxes).length) {
             setCheckedBoxes(initialCheckedBoxes);
-            setInitialCheckedBoxes({ ...initialCheckedBoxes });
         }
 
         const initialAccordionsOpen = JSON.parse(savedAccordionsOpen || "{}");
@@ -105,7 +100,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
                 accordionsOpen,
                 initialAccordionsOpen,
                 checkedBoxes,
-                initialCheckedBoxes,
                 handleAccordionToggle,
                 handleCheckboxChange,
                 getPercentageComplete,

@@ -71,13 +71,11 @@ const Location = ({
             slots={{
                 heading: "div",
             }}
-            data-test={`location-accordion-${location.name}`}
+            data-test={`location-accordion`}
         >
             <AccordionSummary>
                 <div className="flex justify-between w-full items-center">
-                    <h3 data-test={`location-name-${location.name}`}>
-                        {location.name}
-                    </h3>
+                    <h3 data-test={`location-name`}>{location.name}</h3>
 
                     <div>
                         {location?.companions
@@ -89,13 +87,13 @@ const Location = ({
                         <Button
                             href={location.link}
                             target="_blank"
-                            data-test={`location-view-button-${location.name}`}
+                            data-test={`location-view-button`}
                         >
                             View
                         </Button>
                         <div
                             className="w-10 text-right"
-                            data-test={`location-completion-${location.name}`}
+                            data-test={`location-completion`}
                         >
                             {percentComplete}%
                         </div>
@@ -109,7 +107,7 @@ const Location = ({
                     flexDirection: "column",
                     gap: "20px",
                 }}
-                data-test={`location-details-${location.name}`}
+                data-test={`location-details`}
             >
                 {!!location.quests.length && isExpanded && (
                     <GenericList
