@@ -21,17 +21,7 @@ export const theme = createTheme({
         // },
     },
     typography: {
-        fontFamily: "Alegreya, serif",
-        // Apply Alegreya to all typography variants
-        // h1: { fontFamily: "Alegreya, serif" },
-        // h2: { fontFamily: "Alegreya, serif" },
-        // h3: { fontFamily: "Alegreya, serif" },
-        // h4: { fontFamily: "Alegreya, serif" },
-        // h5: { fontFamily: "Alegreya, serif" },
-        // h6: { fontFamily: "Alegreya, serif" },
-        // body1: { fontFamily: "Alegreya, serif" },
-        // body2: { fontFamily: "Alegreya, serif" },
-        // button: { fontFamily: "Alegreya, serif" },
+        // fontFamily: "Alegreya, serif",
     },
     components: {
         MuiAccordion: {
