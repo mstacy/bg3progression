@@ -62,14 +62,10 @@ const Location = ({
     return (
         <Accordion
             key={location.name}
-            disableGutters
             expanded={isExpanded}
             onChange={() => {
                 setIsExpanded(!isExpanded);
                 handleAccordionToggle(accordionId);
-            }}
-            slots={{
-                heading: "div",
             }}
             data-test={`location-accordion`}
         >
@@ -106,6 +102,7 @@ const Location = ({
                     display: "flex",
                     flexDirection: "column",
                     gap: "20px",
+                    padding: "0 0 0 40px",
                 }}
                 data-test={`location-details`}
             >

@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root {
+    --background: #ffffff;
+    --foreground: #333333;
 }
 
-@media (prefers-color-scheme: dark) {
+/* :root {
+  --background: #0C0807;
+  --foreground: #ffffff;
+} */
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -21,8 +26,8 @@ body {
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
+    /* color: var(--foreground);
+    background: var(--background); */
     font-family: var(--font-alegreya), serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -44,11 +44,7 @@ export const Region = ({
     return (
         <Accordion
             key={region.name}
-            disableGutters
             expanded={isExpanded || !!searchTerm}
-            slots={{
-                heading: "div",
-            }}
             data-test={`region-accordion`}
             onChange={() => {
                 setIsExpanded(!isExpanded);
@@ -58,6 +54,7 @@ export const Region = ({
             <AccordionSummary>
                 <div className="flex justify-between w-full items-center">
                     <h2 data-test={`region-name`}>{region.name}</h2>
+
                     <div className="flex justify-between items-center">
                         <Button
                             href={region.link}

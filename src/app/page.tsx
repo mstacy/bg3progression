@@ -1,10 +1,13 @@
 "use client";
 
 import { useLayoutEffect, useState, useMemo } from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 import progression from "../../progression.json";
 import { Region } from "./components/Region";
 import { Header } from "./components/Header";
 import { ProgressProvider } from "./context/ProgressContext";
+import { theme } from "./theme";
 
 export type checkboxValues = {
     isChecked: boolean;
@@ -90,26 +93,32 @@ export default function Home() {
 
     if (isLoading) {
         return (
-            <div className="h-screen w-screen flex items-center justify-center">
-                <div className="text-lg">Loading...</div>
-            </div>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <div className="h-screen w-screen flex items-center justify-center">
+                    <div className="text-lg">Loading...</div>
+                </div>
+            </ThemeProvider>
         );
     }
 
     return (
-        <ProgressProvider>
-            <div>
-                <Header onSearch={setSearchTerm} />
-                <main className="max-w-4xl mx-auto p-4 pt-24">
-                    {filteredRegions.map((region) => (
-                        <Region
-                            key={region.name}
-                            region={region}
-                            searchTerm={searchTerm}
-                        />
-                    ))}
-                </main>
-            </div>
-        </ProgressProvider>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <ProgressProvider>
+                <div>
+                    <Header onSearch={setSearchTerm} />
+                    <main className="max-w-4xl mx-auto p-4 pt-24">
+                        {filteredRegions.map((region) => (
+                            <Region
+                                key={region.name}
+                                region={region}
+                                searchTerm={searchTerm}
+                            />
+                        ))}
+                    </main>
+                </div>
+            </ProgressProvider>
+        </ThemeProvider>
     );
 }

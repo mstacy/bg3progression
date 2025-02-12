@@ -18,7 +18,7 @@ const GenericList = ({
     locationName,
 }: Omit<GenericListProps, "initialCheckedBoxes" | "onCheckboxChange">) => {
     return (
-        <>
+        <div className="flex flex-col gap-2">
             <h4 data-test={`list-name`}>{title}</h4>
             <div className="flex flex-col">
                 {items.map((item) => (
@@ -30,7 +30,7 @@ const GenericList = ({
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 
