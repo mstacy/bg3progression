@@ -76,4 +76,9 @@ export default defineConfig({
     port: 3000,
     reuseExistingServer: !process.env.CI,
   },
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.02,
+    },
+  },
 });

@@ -106,7 +106,7 @@ export default function Home() {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <ProgressProvider>
-                <div>
+                <div data-test="app-container">
                     <Header onSearch={setSearchTerm} />
                     <main className="max-w-4xl mx-auto p-4 pt-24">
                         {filteredRegions.map((region) => (

@@ -148,6 +148,10 @@
                             "link": "https://bg3.wiki/wiki/Findal"
                         },
                         {
+                            "name": "Lakrissa",
+                            "link": "https://bg3.wiki/wiki/Lakrissa"
+                        },
+                        {
                             "name": "Nadira",
                             "link": "https://bg3.wiki/wiki/Nadira#Act_One"
                         },
@@ -537,7 +541,8 @@
                             "link": "https://bg3.wiki/wiki/The_Spellsparkler",
                             "rarity": "rare"
                         }
-                    ]
+                    ],
+                    "companions": ["Wyll"]
                 },
                 {
                     "name": "Zhentarim Basement",

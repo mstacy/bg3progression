@@ -8,6 +8,8 @@ test.describe('Region Components', () => {
     });
 
     test('should render regions with correct initial state', async ({ page }) => {
+        await page.waitForSelector('[data-test="app-container"]');
+
         // Check if regions are rendered
         const regions = await page.locator('[data-test="region-name"]').all();
         expect(regions.length).toBeGreaterThan(0);
@@ -18,6 +20,8 @@ test.describe('Region Components', () => {
             const text = await percentage.textContent();
             expect(text).toContain('0%');
         }
+
+        await expect(page).toHaveScreenshot('regions-initial.png');
     });
 
     test('should expand/collapse regions and locations', async ({ page }) => {
@@ -54,6 +58,8 @@ test.describe('Region Components', () => {
         
         // Verify first region is now collapsed
         expect(await firstRegionContent.isVisible()).toBeFalsy();
+
+        await expect(page).toHaveScreenshot('regions-expanded.png');
     });
 
     test('should update checkboxes and percentages correctly', async ({ page }) => {
@@ -80,6 +86,8 @@ test.describe('Region Components', () => {
         const actCompletion = await page.locator('[data-test="act-completion"]').textContent();
         expect(actCompletion).toContain('%');
         expect(actCompletion).not.toContain('0%');
+
+        await expect(page).toHaveScreenshot('regions-checkboxes.png');
     });
 
     test('should render quests and items correctly', async ({ page }) => {
@@ -102,6 +110,8 @@ test.describe('Region Components', () => {
         // Check for items section
         const itemsSection = await page.locator('[data-test="list-name"]:text("Items")').first();
         expect(await itemsSection.isVisible()).toBeTruthy();
+
+        await expect(page).toHaveScreenshot('regions-quests-and-items.png');
     });
 
     test('should maintain checkbox state after collapse/expand', async ({ page }) => {
@@ -133,13 +143,10 @@ test.describe('Region Components', () => {
         await firstLocation.click();
         await firstLocation.click();
 
-        // await page.waitForTimeout(1000);
-
         // Verify location is expanded
         expect(await firstLocationContent.isVisible()).toBeTruthy();
 
-        // Verify checkbox state is maintained
-        // expect(await page.locator('input[type="checkbox"]').first().isChecked()).toBeTruthy();
+        await expect(page).toHaveScreenshot('regions-checkboxes-collapsed.png');
     });
 
     test('should calculate percentages correctly across regions', async ({ page }) => {
@@ -170,7 +177,8 @@ test.describe('Region Components', () => {
         // Verify region percentage has updated
         const regionPercentage = await page.locator('[data-test="region-completion"]').first().textContent();
         expect(regionPercentage).toBe('100%');
- 
+
+        await expect(page).toHaveScreenshot('regions-checkboxes-all-checked.png');
     });
 
     test('should filter content based on search', async ({ page }) => {
@@ -189,5 +197,7 @@ test.describe('Region Components', () => {
         
         // Verify location is collapsed
         expect(await firstLocationContent.isVisible()).toBeFalsy();
+
+        await expect(page).toHaveScreenshot('regions-search.png');
     });
 });
