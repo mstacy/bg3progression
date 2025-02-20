@@ -18,7 +18,18 @@ const ProgressContext = createContext<ProgressContextType | undefined>(
     undefined
 );
 
-export function ProgressProvider({ children }: { children: React.ReactNode }) {
+type ProgressProviderProps = {
+    children: React.ReactNode;
+    initialState?: {
+        accordions: Record<string, boolean>;
+        checkedBoxes?: Record<string, checkboxValues>;
+    };
+};
+
+export function ProgressProvider({
+    children,
+    initialState,
+}: ProgressProviderProps) {
     const accordionOpenKey = "accordionsOpen";
     const checkedBoxesKey = "act1";
 
@@ -37,17 +48,30 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         const savedCheckedBoxes = localStorage.getItem(checkedBoxesKey);
         const savedAccordionsOpen = localStorage.getItem(accordionOpenKey);
 
-        const initialCheckedBoxes = JSON.parse(savedCheckedBoxes || "{}");
-        if (Object.keys(initialCheckedBoxes).length) {
-            setCheckedBoxes(initialCheckedBoxes);
+        // Use initialState.checkedBoxes if provided, otherwise use localStorage
+        if (initialState?.checkedBoxes) {
+            setCheckedBoxes(initialState.checkedBoxes);
+        } else {
+            const initialCheckedBoxes = JSON.parse(savedCheckedBoxes || "{}");
+            if (Object.keys(initialCheckedBoxes).length) {
+                setCheckedBoxes(initialCheckedBoxes);
+            }
         }
 
-        const initialAccordionsOpen = JSON.parse(savedAccordionsOpen || "{}");
-        if (Object.keys(initialAccordionsOpen).length) {
-            setAccordionsOpen(initialAccordionsOpen);
-            setInitialAccordionsOpen({ ...initialAccordionsOpen });
+        // Use initialState.accordions if provided, otherwise use localStorage
+        if (initialState?.accordions) {
+            setAccordionsOpen(initialState.accordions);
+            setInitialAccordionsOpen({ ...initialState.accordions });
+        } else {
+            const initialAccordionsOpen = JSON.parse(
+                savedAccordionsOpen || "{}"
+            );
+            if (Object.keys(initialAccordionsOpen).length) {
+                setAccordionsOpen(initialAccordionsOpen);
+                setInitialAccordionsOpen({ ...initialAccordionsOpen });
+            }
         }
-    }, []);
+    }, [initialState]);
 
     // Save data to localStorage
     useEffect(() => {
