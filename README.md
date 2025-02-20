@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BG3 Progression
 
-## Getting Started
+Brief description of what your project does.
 
-First, run the development server:
+## Prerequisites
+
+-   Node.js (version 18 or higher)
+-   npm/yarn/pnpm (specify which package manager you prefer)
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/mstacy/bg3progression.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+## Available Scripts
+
+The following npm scripts are available:
+
+-   `npm run dev` - Starts the development server at http://localhost:3000
+-   `npm run build` - Creates an optimized production build
+-   `npm start` - Runs the production server after building
+-   `npm run lint` - Runs ESLint to check code quality
+-   `npm run test` - Runs Playwright tests for end-to-end testing
+-   `npm run storybook` - Starts Storybook development environment on port 6006
+-   `npm run build-storybook` - Builds Storybook for static deployment
+
+## Development
+
+To start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Storybook
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project includes Storybook for component development and testing. To run Storybook:
 
-## Learn More
+```bash
+npm run storybook
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[Brief overview of key directories and their purposes]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+[Instructions for contributing to the project]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[License information]
