@@ -54,15 +54,3 @@ This project includes Storybook for component development and testing. To run St
 ```bash
 npm run storybook
 ```
-
-## Project Structure
-
-[Brief overview of key directories and their purposes]
-
-## Contributing
-
-[Instructions for contributing to the project]
-
-## License
-
-[License information]
