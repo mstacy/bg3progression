@@ -1,6 +1,6 @@
 # BG3 Progression
 
-Brief description of what your project does.
+Track quests, items, and interactions in Baldur's Gate 3 so you don't miss anything.
 
 ## Prerequisites
 

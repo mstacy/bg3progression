@@ -10,7 +10,7 @@ const AlegreyaSerif = Alegreya({
 export const metadata: Metadata = {
     title: "BG3 Progression",
     description:
-        "Track quests, items, and interactions in Baldur's Gate 3 so you do miss anything",
+        "Track quests, items, and interactions in Baldur's Gate 3 so you don't miss anything.",
 };
 
 export default function RootLayout({
