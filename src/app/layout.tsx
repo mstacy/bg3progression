@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "BG3 Progression",
     description:
         "Track quests, items, and interactions in Baldur's Gate 3 so you don't miss anything.",
-    manifest: "/bg3progression/manifest.json",
+    manifest: "/bg3progression/manifest.webmanifest",
 };
 
 export default function RootLayout({
