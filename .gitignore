@@ -47,3 +47,5 @@ node_modules/
 /playwright/.cache/
 
 *storybook.log
+
+certificates
