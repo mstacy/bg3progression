@@ -2,7 +2,9 @@
     "name": "BG3 Progression",
     "short_name": "BG3P",
     "description": "Track quests, items, and interactions in Baldur's Gate 3 so you don't miss anything.",
-    "start_url": "/bg3progression",
+    "start_url": "/bg3progression/",
+    "scope": "/bg3progression/",
+    "display": "standalone",
     "icons": [
         {
             "src": "/icon-192x192.png",
