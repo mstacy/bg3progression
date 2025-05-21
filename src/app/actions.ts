@@ -1,6 +1,6 @@
 "use server";
 
-import webpush from "web-push";
+import webpush, { PushSubscription as WebPushSubscription } from "web-push";
 
 webpush.setVapidDetails(
     "<mailto:your-email@example.com>",
@@ -8,10 +8,26 @@ webpush.setVapidDetails(
     process.env.VAPID_PRIVATE_KEY!
 );
 
-let subscription: PushSubscription | null = null;
+let subscription: WebPushSubscription | null = null;
 
 export async function subscribeUser(sub: PushSubscription) {
-    subscription = sub;
+    subscription = {
+        endpoint: sub.endpoint,
+        keys: {
+            p256dh: btoa(
+                String.fromCharCode.apply(
+                    null,
+                    Array.from(new Uint8Array(sub.getKey("p256dh")!))
+                )
+            ),
+            auth: btoa(
+                String.fromCharCode.apply(
+                    null,
+                    Array.from(new Uint8Array(sub.getKey("auth")!))
+                )
+            ),
+        },
+    } as WebPushSubscription;
     console.log("Subscription:", subscription);
     // In a production environment, you would want to store the subscription in a database
     // For example: await db.subscriptions.create({ data: sub })
