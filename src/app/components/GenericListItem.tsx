@@ -1,5 +1,5 @@
 import { Button, Checkbox, FormControlLabel } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { useProgress } from "../context/ProgressContext";
 
 export type ListItem = {
@@ -13,73 +13,76 @@ type GenericListItemProps = {
     locationName: string;
 };
 
-const GenericListItem = ({
-    item,
-    regionName,
-    locationName,
-}: GenericListItemProps) => {
-    const { checkedBoxes, handleCheckboxChange } = useProgress();
-    const [isChecked, setIsChecked] = useState(false);
+const GenericListItem = memo(
+    ({ item, regionName, locationName }: GenericListItemProps) => {
+        const { handleCheckboxChange, checkedBoxes } = useProgress();
+        const [isChecked, setIsChecked] = useState(false);
 
-    useEffect(() => {
-        // Only set the initial state once on mount
-        const initialChecked = checkedBoxes[`${item.name}`]?.isChecked
-            ? true
-            : false;
-        setIsChecked(initialChecked);
+        useEffect(() => {
+            // Get initial state from checkedBoxes
+            const initialChecked = checkedBoxes[item.name]?.isChecked || false;
+            setIsChecked(initialChecked);
 
-        if (!initialChecked) {
-            handleCheckboxChange({
-                name: item.name,
-                values: {
-                    isChecked: false,
-                    region: regionName,
-                    location: locationName,
-                },
-            });
-        }
-        // Only run once on mount
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+            // Only initialize if not already in checkedBoxes
+            if (!checkedBoxes[item.name]) {
+                handleCheckboxChange({
+                    name: item.name,
+                    values: {
+                        isChecked: false,
+                        region: regionName,
+                        location: locationName,
+                    },
+                });
+            }
+        }, [
+            item.name,
+            regionName,
+            locationName,
+            checkedBoxes,
+            handleCheckboxChange,
+        ]);
 
-    return (
-        <div
-            key={`${item.name}-${regionName}-${locationName}`}
-            className="flex justify-between"
-        >
-            <FormControlLabel
-                label={item.name}
-                control={
-                    <Checkbox
-                        id={`${item.name}-${regionName}-${locationName}`}
-                        data-test={`item-checkbox`}
-                    />
-                }
-                onChange={(e, checked) => {
-                    setIsChecked(checked);
-                    handleCheckboxChange({
-                        name: item.name,
-                        values: {
-                            isChecked: checked,
-                            region: regionName,
-                            location: locationName,
-                        },
-                    });
-                }}
-                checked={isChecked}
-                data-test={`item-checkbox-label`}
-            />
-            {item.link && (
-                <Button
-                    href={item.link}
-                    target="_blank"
-                    data-test={`item-view-button`}
-                >
-                    View
-                </Button>
-            )}
-        </div>
-    );
-};
+        return (
+            <div
+                key={`${item.name}-${regionName}-${locationName}`}
+                className="flex justify-between"
+            >
+                <FormControlLabel
+                    label={item.name}
+                    control={
+                        <Checkbox
+                            id={`${item.name}-${regionName}-${locationName}`}
+                            data-test={`item-checkbox`}
+                        />
+                    }
+                    onChange={(e, checked) => {
+                        setIsChecked(checked);
+                        handleCheckboxChange({
+                            name: item.name,
+                            values: {
+                                isChecked: checked,
+                                region: regionName,
+                                location: locationName,
+                            },
+                        });
+                    }}
+                    checked={isChecked}
+                    data-test={`item-checkbox-label`}
+                />
+                {item.link && (
+                    <Button
+                        href={item.link}
+                        target="_blank"
+                        data-test={`item-view-button`}
+                    >
+                        View
+                    </Button>
+                )}
+            </div>
+        );
+    }
+);
+
+GenericListItem.displayName = "GenericListItem";
 
 export default GenericListItem;

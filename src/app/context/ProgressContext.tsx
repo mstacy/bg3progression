@@ -1,4 +1,11 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+    createContext,
+    useContext,
+    useEffect,
+    useState,
+    useMemo,
+    useCallback,
+} from "react";
 import { checkboxValues } from "../page";
 import { getPercentage } from "../utils";
 
@@ -91,44 +98,51 @@ export function ProgressProvider({
         return () => clearTimeout(handler);
     }, [accordionsOpen]);
 
-    const handleAccordionToggle = (accordionId: string) => {
+    const handleAccordionToggle = useCallback((accordionId: string) => {
         setAccordionsOpen((current) => ({
             ...current,
             [accordionId]: !current[accordionId],
         }));
-    };
+    }, []);
 
-    const handleCheckboxChange = ({
-        name,
-        values,
-    }: {
-        name: string;
-        values: checkboxValues;
-    }) => {
-        setCheckedBoxes((current) => ({
-            ...current,
-            [name]: values,
-        }));
-    };
+    const handleCheckboxChange = useCallback(
+        ({ name, values }: { name: string; values: checkboxValues }) => {
+            setCheckedBoxes((current) => ({
+                ...current,
+                [name]: values,
+            }));
+        },
+        []
+    );
 
-    const getPercentageComplete = (
-        type: keyof checkboxValues,
-        name: string
-    ) => {
-        return getPercentage(checkedBoxes, type, name);
-    };
+    const getPercentageComplete = useCallback(
+        (type: keyof checkboxValues, name: string) => {
+            return getPercentage(checkedBoxes, type, name);
+        },
+        [checkedBoxes]
+    );
+
+    const contextValue = useMemo(
+        () => ({
+            accordionsOpen,
+            initialAccordionsOpen,
+            checkedBoxes,
+            handleAccordionToggle,
+            handleCheckboxChange,
+            getPercentageComplete,
+        }),
+        [
+            accordionsOpen,
+            initialAccordionsOpen,
+            checkedBoxes,
+            handleAccordionToggle,
+            handleCheckboxChange,
+            getPercentageComplete,
+        ]
+    );
 
     return (
-        <ProgressContext.Provider
-            value={{
-                accordionsOpen,
-                initialAccordionsOpen,
-                checkedBoxes,
-                handleAccordionToggle,
-                handleCheckboxChange,
-                getPercentageComplete,
-            }}
-        >
+        <ProgressContext.Provider value={contextValue}>
             {children}
         </ProgressContext.Provider>
     );
